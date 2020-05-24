@@ -167,12 +167,14 @@ public class Principal extends javax.swing.JFrame {
 
     private void CrearMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CrearMouseClicked
         Menu_Creacion.setLocationRelativeTo(this);
+        Menu_Creacion.pack();
         Menu_Creacion.setModal(true);
         Menu_Creacion.setVisible(true);
     }//GEN-LAST:event_CrearMouseClicked
 
     private void jButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseClicked
         Crear_Empresa.setLocationRelativeTo(this);
+        Crear_Empresa.pack();
         Crear_Empresa.setModal(true);
         Crear_Empresa.setVisible(true);
     }//GEN-LAST:event_jButton1MouseClicked

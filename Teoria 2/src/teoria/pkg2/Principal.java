@@ -28,6 +28,7 @@ public class Principal extends javax.swing.JFrame {
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
+        Crear_Personas = new javax.swing.JDialog();
         jPanel1 = new javax.swing.JPanel();
         Eliminar = new javax.swing.JButton();
         Modificar = new javax.swing.JButton();
@@ -131,12 +132,23 @@ public class Principal extends javax.swing.JFrame {
                 .addGap(0, 11, Short.MAX_VALUE))
         );
 
+        javax.swing.GroupLayout Crear_PersonasLayout = new javax.swing.GroupLayout(Crear_Personas.getContentPane());
+        Crear_Personas.getContentPane().setLayout(Crear_PersonasLayout);
+        Crear_PersonasLayout.setHorizontalGroup(
+            Crear_PersonasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 606, Short.MAX_VALUE)
+        );
+        Crear_PersonasLayout.setVerticalGroup(
+            Crear_PersonasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 369, Short.MAX_VALUE)
+        );
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         Eliminar.setText("ELIMINAR");
-        jPanel1.add(Eliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 180, -1, -1));
+        jPanel1.add(Eliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 180, 100, -1));
 
         Modificar.setText("MODIFICAR");
         jPanel1.add(Modificar, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 110, -1, -1));
@@ -147,7 +159,7 @@ public class Principal extends javax.swing.JFrame {
                 CrearMouseClicked(evt);
             }
         });
-        jPanel1.add(Crear, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 50, -1, -1));
+        jPanel1.add(Crear, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 50, 100, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -206,6 +218,7 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JButton C_Empresa;
     private javax.swing.JButton Crear;
     private javax.swing.JDialog Crear_Empresa;
+    private javax.swing.JDialog Crear_Personas;
     private javax.swing.JButton Eliminar;
     private javax.swing.JTextField Emp_direccion;
     private javax.swing.JTextField Emp_nom;

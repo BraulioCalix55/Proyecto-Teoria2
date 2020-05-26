@@ -25,10 +25,12 @@ public class Principal extends javax.swing.JFrame {
         Emp_direccion = new javax.swing.JTextField();
         C_Empresa = new javax.swing.JButton();
         Menu_Creacion = new javax.swing.JDialog();
-        jPanel3 = new javax.swing.JPanel();
-        btn_crearEmpresa = new javax.swing.JButton();
-        btn_CreaPersona = new javax.swing.JButton();
         Btn_CreaTrabajo = new javax.swing.JButton();
+        btn_CreaPersona = new javax.swing.JButton();
+        btn_crearEmpresa = new javax.swing.JButton();
+        jLabel35 = new javax.swing.JLabel();
+        jLabel36 = new javax.swing.JLabel();
+        jLabel37 = new javax.swing.JLabel();
         Crear_Personas = new javax.swing.JDialog();
         btn_CrearPersonaFinal = new javax.swing.JButton();
         jLabel6 = new javax.swing.JLabel();
@@ -47,7 +49,6 @@ public class Principal extends javax.swing.JFrame {
         jLabel15 = new javax.swing.JLabel();
         Persona_estado = new javax.swing.JComboBox<>();
         Persona_hijos = new javax.swing.JComboBox<>();
-        Persona_enfermedad = new javax.swing.JTextField();
         jLabel16 = new javax.swing.JLabel();
         jLabel17 = new javax.swing.JLabel();
         jLabel18 = new javax.swing.JLabel();
@@ -68,6 +69,7 @@ public class Principal extends javax.swing.JFrame {
         Persona_contrato = new javax.swing.JComboBox<>();
         jLabel28 = new javax.swing.JLabel();
         Personas_salario = new javax.swing.JTextField();
+        Persona_enfermedad = new javax.swing.JComboBox<>();
         Crear_solicitud = new javax.swing.JDialog();
         soli_nombre = new javax.swing.JComboBox<>();
         soli_idempre = new javax.swing.JComboBox<>();
@@ -81,8 +83,9 @@ public class Principal extends javax.swing.JFrame {
         soli_tipo = new javax.swing.JComboBox<>();
         jPanel1 = new javax.swing.JPanel();
         Eliminar = new javax.swing.JButton();
-        Modificar = new javax.swing.JButton();
         Crear = new javax.swing.JButton();
+        jLabel34 = new javax.swing.JLabel();
+        Modificar1 = new javax.swing.JButton();
 
         jLabel1.setText("Creación Empresa");
 
@@ -153,15 +156,7 @@ public class Principal extends javax.swing.JFrame {
         Menu_Creacion.setMinimumSize(new java.awt.Dimension(300, 300));
         Menu_Creacion.setModal(true);
 
-        jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        btn_crearEmpresa.setText("Empresa");
-        btn_crearEmpresa.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                btn_crearEmpresaMouseClicked(evt);
-            }
-        });
-        jPanel3.add(btn_crearEmpresa, new org.netbeans.lib.awtextra.AbsoluteConstraints(98, 42, -1, -1));
+        Btn_CreaTrabajo.setText("Puesto Trabajo");
 
         btn_CreaPersona.setText("Persona");
         btn_CreaPersona.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -169,22 +164,55 @@ public class Principal extends javax.swing.JFrame {
                 btn_CreaPersonaMouseClicked(evt);
             }
         });
-        jPanel3.add(btn_CreaPersona, new org.netbeans.lib.awtextra.AbsoluteConstraints(102, 108, -1, -1));
 
-        Btn_CreaTrabajo.setText("Puesto Trabajo");
-        jPanel3.add(Btn_CreaTrabajo, new org.netbeans.lib.awtextra.AbsoluteConstraints(77, 173, -1, -1));
+        btn_crearEmpresa.setText("Empresa");
+        btn_crearEmpresa.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btn_crearEmpresaMouseClicked(evt);
+            }
+        });
+
+        jLabel35.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/empresa.png"))); // NOI18N
+        jLabel35.setText("jLabel35");
+
+        jLabel36.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/job inter.png"))); // NOI18N
+        jLabel36.setText("jLabel35");
+
+        jLabel37.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/work.png"))); // NOI18N
 
         javax.swing.GroupLayout Menu_CreacionLayout = new javax.swing.GroupLayout(Menu_Creacion.getContentPane());
         Menu_Creacion.getContentPane().setLayout(Menu_CreacionLayout);
         Menu_CreacionLayout.setHorizontalGroup(
             Menu_CreacionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGroup(Menu_CreacionLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(Menu_CreacionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(btn_CreaPersona)
+                    .addComponent(jLabel37, javax.swing.GroupLayout.PREFERRED_SIZE, 234, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(Menu_CreacionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel35, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 234, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btn_crearEmpresa, javax.swing.GroupLayout.Alignment.TRAILING))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 14, Short.MAX_VALUE)
+                .addGroup(Menu_CreacionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel36, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 234, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Btn_CreaTrabajo, javax.swing.GroupLayout.Alignment.TRAILING))
+                .addContainerGap())
         );
         Menu_CreacionLayout.setVerticalGroup(
             Menu_CreacionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(Menu_CreacionLayout.createSequentialGroup()
-                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 11, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addGroup(Menu_CreacionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel35, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jLabel36, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jLabel37, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(Menu_CreacionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(Btn_CreaTrabajo)
+                    .addComponent(btn_CreaPersona)
+                    .addComponent(btn_crearEmpresa))
+                .addContainerGap())
         );
 
         Crear_Personas.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -195,104 +223,115 @@ public class Principal extends javax.swing.JFrame {
                 btn_CrearPersonaFinalMouseClicked(evt);
             }
         });
-        Crear_Personas.getContentPane().add(btn_CrearPersonaFinal, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 850, -1, -1));
+        Crear_Personas.getContentPane().add(btn_CrearPersonaFinal, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 610, -1, -1));
 
+        jLabel6.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel6.setText("CREACION DE PERSONAS");
-        Crear_Personas.getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(264, 11, -1, -1));
+        Crear_Personas.getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 10, -1, -1));
 
+        jLabel7.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel7.setText("Datos Personales");
-        Crear_Personas.getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(46, 41, -1, -1));
+        Crear_Personas.getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 50, -1, -1));
 
+        jLabel8.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel8.setText("Datos Familiares");
-        Crear_Personas.getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 220, -1, -1));
+        Crear_Personas.getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 50, -1, -1));
 
+        jLabel9.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel9.setText("Datos sanitarios");
-        Crear_Personas.getContentPane().add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 332, -1, -1));
+        Crear_Personas.getContentPane().add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 270, -1, -1));
 
         jLabel10.setText("Nombre");
-        Crear_Personas.getContentPane().add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(218, 107, -1, -1));
+        Crear_Personas.getContentPane().add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 130, -1, -1));
 
         jLabel11.setText("ID");
-        Crear_Personas.getContentPane().add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(218, 67, -1, -1));
+        Crear_Personas.getContentPane().add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 90, -1, -1));
 
         jLabel12.setText("Edad");
-        Crear_Personas.getContentPane().add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(211, 147, -1, -1));
+        Crear_Personas.getContentPane().add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 170, -1, -1));
 
         jLabel13.setText("Genero");
-        Crear_Personas.getContentPane().add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(211, 186, -1, -1));
-        Crear_Personas.getContentPane().add(Persona_nombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(334, 104, 100, -1));
-        Crear_Personas.getContentPane().add(Persona_edad, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 140, 41, -1));
+        Crear_Personas.getContentPane().add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 210, -1, -1));
+        Crear_Personas.getContentPane().add(Persona_nombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 130, 100, -1));
+        Crear_Personas.getContentPane().add(Persona_edad, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 170, 41, -1));
 
         Persona_genero.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "M", "F" }));
-        Crear_Personas.getContentPane().add(Persona_genero, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 180, -1, -1));
-        Crear_Personas.getContentPane().add(persona_id, new org.netbeans.lib.awtextra.AbsoluteConstraints(334, 64, 100, -1));
+        Crear_Personas.getContentPane().add(Persona_genero, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 210, -1, -1));
+        Crear_Personas.getContentPane().add(persona_id, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 90, 100, -1));
 
         jLabel14.setText("Estado Legal");
-        Crear_Personas.getContentPane().add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(211, 242, -1, -1));
+        Crear_Personas.getContentPane().add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 80, -1, -1));
 
         jLabel15.setText("Hijos");
-        Crear_Personas.getContentPane().add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(211, 293, -1, -1));
+        Crear_Personas.getContentPane().add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 110, -1, -1));
 
         Persona_estado.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Soltero", "Casado", "Divorceado" }));
-        Crear_Personas.getContentPane().add(Persona_estado, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 240, -1, -1));
+        Crear_Personas.getContentPane().add(Persona_estado, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 80, -1, -1));
 
         Persona_hijos.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "si", "no" }));
-        Crear_Personas.getContentPane().add(Persona_hijos, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 290, -1, -1));
-        Crear_Personas.getContentPane().add(Persona_enfermedad, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 360, 89, -1));
+        Crear_Personas.getContentPane().add(Persona_hijos, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 110, -1, -1));
 
         jLabel16.setText("Enfermedad");
-        Crear_Personas.getContentPane().add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(211, 364, -1, -1));
+        Crear_Personas.getContentPane().add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 310, -1, -1));
 
+        jLabel17.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel17.setText("Datos legales");
-        Crear_Personas.getContentPane().add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 405, -1, -1));
+        Crear_Personas.getContentPane().add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 280, -1, -1));
 
         jLabel18.setText("Antecedentes");
-        Crear_Personas.getContentPane().add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(211, 430, -1, -1));
+        Crear_Personas.getContentPane().add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 310, -1, -1));
 
         Persona_antecedentes.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Si", "No" }));
-        Crear_Personas.getContentPane().add(Persona_antecedentes, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 430, -1, -1));
+        Crear_Personas.getContentPane().add(Persona_antecedentes, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 310, -1, -1));
 
+        jLabel19.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel19.setText("Datos Academicos");
-        Crear_Personas.getContentPane().add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 470, -1, -1));
+        Crear_Personas.getContentPane().add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 370, -1, -1));
 
         jLabel20.setText("Titulo");
-        Crear_Personas.getContentPane().add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(211, 491, -1, -1));
+        Crear_Personas.getContentPane().add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 400, -1, -1));
 
         Persona_titulo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Licenciado", "Ingeniero", "Doctor" }));
-        Crear_Personas.getContentPane().add(Persona_titulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 490, 89, -1));
-        Crear_Personas.getContentPane().add(Persona_indice, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 540, 41, -1));
+        Crear_Personas.getContentPane().add(Persona_titulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 400, 89, -1));
+        Crear_Personas.getContentPane().add(Persona_indice, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 440, 41, -1));
 
         jLabel21.setText("Indice Graduación");
-        Crear_Personas.getContentPane().add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(211, 541, -1, -1));
+        Crear_Personas.getContentPane().add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 440, -1, -1));
 
+        jLabel22.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel22.setText("Datos Laborales");
-        Crear_Personas.getContentPane().add(jLabel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 571, -1, -1));
+        Crear_Personas.getContentPane().add(jLabel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 180, -1, -1));
 
-        jLabel23.setText("años de experiencia");
-        Crear_Personas.getContentPane().add(jLabel23, new org.netbeans.lib.awtextra.AbsoluteConstraints(211, 599, -1, -1));
-        Crear_Personas.getContentPane().add(Persona_experiencia, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 600, 41, -1));
+        jLabel23.setText("Años de experiencia");
+        Crear_Personas.getContentPane().add(jLabel23, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 220, -1, -1));
+        Crear_Personas.getContentPane().add(Persona_experiencia, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 220, 41, -1));
 
+        jLabel24.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel24.setText("Tipo de empleo");
-        Crear_Personas.getContentPane().add(jLabel24, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 650, -1, -1));
+        Crear_Personas.getContentPane().add(jLabel24, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 380, -1, -1));
 
         jLabel25.setText("Tipo de Empleo");
-        Crear_Personas.getContentPane().add(jLabel25, new org.netbeans.lib.awtextra.AbsoluteConstraints(211, 675, -1, -1));
+        Crear_Personas.getContentPane().add(jLabel25, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 420, -1, -1));
 
         Persona_tipo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Marketing", "Oficina", "Administracion" }));
-        Crear_Personas.getContentPane().add(Persona_tipo, new org.netbeans.lib.awtextra.AbsoluteConstraints(334, 672, 89, -1));
+        Crear_Personas.getContentPane().add(Persona_tipo, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 420, 89, -1));
 
+        jLabel26.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel26.setText("Preferencia de empleo");
-        Crear_Personas.getContentPane().add(jLabel26, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 729, -1, -1));
+        Crear_Personas.getContentPane().add(jLabel26, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 500, -1, -1));
 
         jLabel27.setText("Tipo contrato");
-        Crear_Personas.getContentPane().add(jLabel27, new org.netbeans.lib.awtextra.AbsoluteConstraints(211, 756, -1, -1));
+        Crear_Personas.getContentPane().add(jLabel27, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 530, -1, -1));
 
         Persona_contrato.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Por hora", "Fijo" }));
-        Crear_Personas.getContentPane().add(Persona_contrato, new org.netbeans.lib.awtextra.AbsoluteConstraints(334, 753, 89, -1));
+        Crear_Personas.getContentPane().add(Persona_contrato, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 530, 89, -1));
 
         jLabel28.setText("Salario");
-        Crear_Personas.getContentPane().add(jLabel28, new org.netbeans.lib.awtextra.AbsoluteConstraints(211, 803, -1, -1));
-        Crear_Personas.getContentPane().add(Personas_salario, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 800, 60, -1));
+        Crear_Personas.getContentPane().add(jLabel28, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 570, -1, -1));
+        Crear_Personas.getContentPane().add(Personas_salario, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 570, 60, -1));
+
+        Persona_enfermedad.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Hipertensión", "Diabetes", "Discapacidad", "Otra" }));
+        Crear_Personas.getContentPane().add(Persona_enfermedad, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 310, 130, -1));
 
         soli_nombre.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
@@ -368,14 +407,12 @@ public class Principal extends javax.swing.JFrame {
         );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Ventana Principal");
 
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         Eliminar.setText("ELIMINAR");
-        jPanel1.add(Eliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 180, 100, -1));
-
-        Modificar.setText("MODIFICAR");
-        jPanel1.add(Modificar, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 110, -1, -1));
+        jPanel1.add(Eliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 240, 100, -1));
 
         Crear.setText("CREAR");
         Crear.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -383,19 +420,23 @@ public class Principal extends javax.swing.JFrame {
                 CrearMouseClicked(evt);
             }
         });
-        jPanel1.add(Crear, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 50, 100, -1));
+        jPanel1.add(Crear, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 240, 100, -1));
+
+        jLabel34.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/01.png"))); // NOI18N
+        jPanel1.add(jLabel34, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, 580, 240));
+
+        Modificar1.setText("MODIFICAR");
+        jPanel1.add(Modificar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 240, -1, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 275, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 278, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 278, Short.MAX_VALUE)
         );
 
         pack();
@@ -408,19 +449,12 @@ public class Principal extends javax.swing.JFrame {
         Menu_Creacion.setVisible(true);
     }//GEN-LAST:event_CrearMouseClicked
 
-    private void btn_crearEmpresaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_crearEmpresaMouseClicked
-        Crear_Empresa.setLocationRelativeTo(this);
-        Crear_Empresa.pack();
-        Crear_Empresa.setModal(true);
-        Crear_Empresa.setVisible(true);
-    }//GEN-LAST:event_btn_crearEmpresaMouseClicked
-
     private void btn_CreaPersonaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_CreaPersonaMouseClicked
         // TODO add your handling code here:
+        Crear_Personas.setModal(true);
         Crear_Personas.pack();
-        Crear_Empresa.setLocationRelativeTo(this);
-        Crear_Empresa.setModal(true);
-        Crear_Empresa.setVisible(true);
+        Crear_Personas.setLocationRelativeTo(this);
+        Crear_Personas.setVisible(true);
         Persona_edad.setValue(18);
     }//GEN-LAST:event_btn_CreaPersonaMouseClicked
 
@@ -435,8 +469,8 @@ public class Principal extends javax.swing.JFrame {
         genero = Persona_genero.getSelectedItem().toString();
         legal = Persona_estado.getSelectedItem().toString();
         hijos = Persona_hijos.getSelectedItem().toString();
-        enfermedad = Persona_enfermedad.getText();
-        Persona_enfermedad.setText("");
+        enfermedad = Persona_enfermedad.getSelectedItem().toString();
+        Persona_enfermedad.setSelectedItem(0);
         antecedentes = Persona_antecedentes.getSelectedItem().toString();
         titulo = Persona_titulo.getSelectedItem().toString();
         indice = Persona_indice.getValue().toString();
@@ -464,10 +498,18 @@ public class Principal extends javax.swing.JFrame {
         Crear_solicitud.dispose();
         
     }//GEN-LAST:event_btn_crearSoliMouseClicked
+
+    private void btn_crearEmpresaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_crearEmpresaMouseClicked
+        
+        Crear_Empresa.setModal(true);
+        Crear_Empresa.pack();
+        Crear_Empresa.setLocationRelativeTo(this);
+        Crear_Empresa.setVisible(true);
+    }//GEN-LAST:event_btn_crearEmpresaMouseClicked
     public static void main(String args[]) {
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
+                if ("Windows".equals(info.getName())) {
                     javax.swing.UIManager.setLookAndFeel(info.getClassName());
                     break;
                 }
@@ -499,11 +541,11 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JTextField Emp_direccion;
     private javax.swing.JTextField Emp_nom;
     private javax.swing.JDialog Menu_Creacion;
-    private javax.swing.JButton Modificar;
+    private javax.swing.JButton Modificar1;
     private javax.swing.JComboBox<String> Persona_antecedentes;
     private javax.swing.JComboBox<String> Persona_contrato;
     private javax.swing.JSpinner Persona_edad;
-    private javax.swing.JTextField Persona_enfermedad;
+    private javax.swing.JComboBox<String> Persona_enfermedad;
     private javax.swing.JComboBox<String> Persona_estado;
     private javax.swing.JSpinner Persona_experiencia;
     private javax.swing.JComboBox<String> Persona_genero;
@@ -546,6 +588,10 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel31;
     private javax.swing.JLabel jLabel32;
     private javax.swing.JLabel jLabel33;
+    private javax.swing.JLabel jLabel34;
+    private javax.swing.JLabel jLabel35;
+    private javax.swing.JLabel jLabel36;
+    private javax.swing.JLabel jLabel37;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
@@ -553,7 +599,6 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel3;
     private javax.swing.JTextField persona_id;
     private javax.swing.JTextField soli_id;
     private javax.swing.JComboBox<String> soli_idempre;

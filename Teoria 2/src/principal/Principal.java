@@ -90,7 +90,7 @@ public class Principal extends javax.swing.JFrame {
         tipoPuesto_solicitud = new javax.swing.JTextField();
         Modificar_Personas = new javax.swing.JDialog();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        tabla_personas = new javax.swing.JTable();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
@@ -464,26 +464,23 @@ public class Principal extends javax.swing.JFrame {
 
         Modificar_Personas.setTitle("Modificar Personas");
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        tabla_personas.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null}
+
             },
             new String [] {
                 "ID Object", "Nombre", "Genero", "Edad", "Estado Civil", "Hijos", "Enfermedad", "Antecedentes", "Titulo", "Indice", "Años Exp"
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false, false, false, false, false, false, false, true, true, true, false
+                false, false, false, false, false, false, false, false, false, false, false
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
                 return canEdit [columnIndex];
             }
         });
-        jScrollPane1.setViewportView(jTable1);
+        jScrollPane1.setViewportView(tabla_personas);
 
         jButton1.setText("Modificar");
 
@@ -800,6 +797,9 @@ public class Principal extends javax.swing.JFrame {
 
     private void jButton8MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton8MouseClicked
         // TODO add your handling code here:
+        PersonaConexion p=new PersonaConexion();
+        p.obtenerPersonas(tabla_personas);
+        JOptionPane.showMessageDialog(this, "Listado exitosamente");
     }//GEN-LAST:event_jButton8MouseClicked
     public static void main(String args[]) {
         try {
@@ -908,11 +908,11 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JTable jTable1;
     private javax.swing.JTable jTable2;
     private javax.swing.JTextField nombrePersona_solicitud;
     private javax.swing.JTextField nombre_empresa;
     private javax.swing.JTextField persona_id;
+    private javax.swing.JTable tabla_personas;
     private javax.swing.JTextField tipoPuesto_solicitud;
     // End of variables declaration//GEN-END:variables
 boolean gestionar;

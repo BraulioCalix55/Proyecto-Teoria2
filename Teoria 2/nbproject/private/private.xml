@@ -3,9 +3,11 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/mejia/Desktop/Proyecto%20-%20Teoria2/Proyecto-Teoria2-master/Teoria%202/src/teoria/pkg2/Persona.java</file>
-            <file>file:/C:/Users/mejia/Desktop/Proyecto%20-%20Teoria2/Proyecto-Teoria2-master/Teoria%202/src/teoria/pkg2/solicitud.java</file>
-            <file>file:/C:/Users/mejia/Desktop/Proyecto%20-%20Teoria2/Proyecto-Teoria2-master/Teoria%202/src/teoria/pkg2/Principal.java</file>
+            <file>file:/C:/Users/mejia/Desktop/Proyecto%20-%20Teoria2/Proyecto-Teoria2/Teoria%202/src/principal/Persona.java</file>
+            <file>file:/C:/Users/mejia/Desktop/Proyecto%20-%20Teoria2/Proyecto-Teoria2/Teoria%202/src/conexiones/SolicitudConexion.java</file>
+            <file>file:/C:/Users/mejia/Desktop/Proyecto%20-%20Teoria2/Proyecto-Teoria2/Teoria%202/src/principal/Principal.java</file>
+            <file>file:/C:/Users/mejia/Desktop/Proyecto%20-%20Teoria2/Proyecto-Teoria2/Teoria%202/src/conexiones/EmpresaConexion.java</file>
+            <file>file:/C:/Users/mejia/Desktop/Proyecto%20-%20Teoria2/Proyecto-Teoria2/Teoria%202/src/conexiones/PersonaConexion.java</file>
         </group>
     </open-files>
 </project-private>

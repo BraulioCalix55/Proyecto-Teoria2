@@ -5,6 +5,8 @@
  */
 package principal;
 
+import org.bson.Document;
+
 /**
  *
  * @author David
@@ -54,7 +56,15 @@ public class Empresa {
         this.direccion = direccion;
     }
     
-    
+    public Document toDocument(){
+        Document d=new Document();
+        d.append("Nombre de la empresa", this.nombre)
+        .append("CIF", this.CIF)
+        .append("Director", this.director)
+        .append("Direccion", this.direccion);
+        
+        return d;
+    }
     
     
 }

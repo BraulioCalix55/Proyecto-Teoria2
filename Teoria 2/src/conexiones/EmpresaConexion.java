@@ -28,10 +28,7 @@ public class EmpresaConexion {
         MongoDatabase database = mongoClient.getDatabase("ProyectoTBD2");
         try {
             MongoCollection<org.bson.Document> collection=database.getCollection("Empresas");
-            collection.insertOne(new org.bson.Document ("Nombre", empresa.getNombre())
-                    .append("CIF", empresa.getCIF())
-                    .append("Director", empresa.getDirector())
-                    .append("Direccion", empresa.getDireccion()));
+            collection.insertOne(empresa.toDocument());
         } catch (Exception e) {
             e.printStackTrace();
         }

@@ -28,10 +28,7 @@ public class SolicitudConexion {
         MongoDatabase database = mongoClient.getDatabase("ProyectoTBD2");
         try {
             MongoCollection<org.bson.Document> collection=database.getCollection("Solicitudes");
-            collection.insertOne(new org.bson.Document ("ID Soliciud", solicitud.getId())
-                    .append("CIF Empresa", solicitud.getCif())
-                    .append("Nombre de persona", solicitud.getNompersona())
-                    .append("Tipo de puesto", solicitud.getTipopuesto()));
+            collection.insertOne(solicitud.toDocument());
         } catch (Exception e) {
             e.printStackTrace();
         }

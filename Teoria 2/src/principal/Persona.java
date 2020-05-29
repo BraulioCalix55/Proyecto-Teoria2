@@ -11,6 +11,7 @@ import com.mongodb.client.MongoClients;
 import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoCursor;
 import com.mongodb.client.MongoDatabase;
+import org.bson.Document;
 
 /**
  *
@@ -151,5 +152,22 @@ private String id,genero,nombre,edad,legal,hijos,enfermedad,antecedentes,titulo,
         this.sueldo = sueldo;
     }
     
+    public Document toDocument(){
+        
+        Document d=new Document();
+        d.append("Nombre", this.nombre)
+        .append("Genero", this.genero)
+        .append("Edad", this.edad)
+        .append("Estado legal", this.legal)
+        .append("Enfermedades previas", this.enfermedad)
+        .append("Antecedentes", this.antecedentes)
+        .append("Titulo", this.titulo)
+        .append("Indice", this.indice)
+        .append("Años", this.años)
+        .append("Tipo Empleo", this.empleo)
+        .append("Tipo Contrato", this.contrato)
+        .append("Sueldo", this.sueldo);
+        return d;
+    }
     
 }

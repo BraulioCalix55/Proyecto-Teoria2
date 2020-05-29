@@ -94,6 +94,7 @@ public class Principal extends javax.swing.JFrame {
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
+        jButton8 = new javax.swing.JButton();
         Modificar_Empresas = new javax.swing.JDialog();
         jScrollPane2 = new javax.swing.JScrollPane();
         jTable2 = new javax.swing.JTable();
@@ -490,6 +491,13 @@ public class Principal extends javax.swing.JFrame {
 
         jButton3.setText("Realizar solicitud (?)");
 
+        jButton8.setText("Listar personas");
+        jButton8.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton8MouseClicked(evt);
+            }
+        });
+
         javax.swing.GroupLayout Modificar_PersonasLayout = new javax.swing.GroupLayout(Modificar_Personas.getContentPane());
         Modificar_Personas.getContentPane().setLayout(Modificar_PersonasLayout);
         Modificar_PersonasLayout.setHorizontalGroup(
@@ -498,13 +506,15 @@ public class Principal extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(Modificar_PersonasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(Modificar_PersonasLayout.createSequentialGroup()
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 764, Short.MAX_VALUE)
+                        .addComponent(jScrollPane1)
                         .addContainerGap())
                     .addGroup(Modificar_PersonasLayout.createSequentialGroup()
                         .addComponent(jButton1)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jButton2)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGap(176, 176, 176)
+                        .addComponent(jButton8)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 224, Short.MAX_VALUE)
                         .addComponent(jButton3)
                         .addGap(18, 18, 18))))
         );
@@ -517,7 +527,8 @@ public class Principal extends javax.swing.JFrame {
                 .addGroup(Modificar_PersonasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton1)
                     .addComponent(jButton2)
-                    .addComponent(jButton3))
+                    .addComponent(jButton3)
+                    .addComponent(jButton8))
                 .addContainerGap())
         );
 
@@ -630,9 +641,9 @@ public class Principal extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void CrearMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CrearMouseClicked
-        Menu_Creacion.setLocationRelativeTo(this);
-        Menu_Creacion.pack();
         Menu_Creacion.setModal(true);
+        Menu_Creacion.pack();
+        Menu_Creacion.setLocationRelativeTo(this);
         Menu_Creacion.setVisible(true);
     }//GEN-LAST:event_CrearMouseClicked
 
@@ -686,7 +697,7 @@ public class Principal extends javax.swing.JFrame {
         Persona p= new Persona(id, genero, nombre, edad, legal, hijos, enfermedad, antecedentes, titulo, indice, años, empleo, contrato, sueldo);
         PersonaConexion pc=new PersonaConexion(p);
         pc.crearPersona();
-        JOptionPane.showMessageDialog(this, "persona creada");
+        JOptionPane.showMessageDialog(this, "Persona creada exitosamente");
         Crear_Personas.dispose();
 
     }//GEN-LAST:event_btn_CrearPersonaFinalMouseClicked
@@ -704,7 +715,7 @@ public class Principal extends javax.swing.JFrame {
         Solicitud soli=new Solicitud();
         SolicitudConexion sc=new SolicitudConexion(soli);
         sc.crearSolicitud();
-        JOptionPane.showMessageDialog(this, "Solicitud creada");
+        JOptionPane.showMessageDialog(this, "Solicitud creada exitosamente");
         Crear_solicitud.dispose();
         
     }//GEN-LAST:event_btn_crearSoliMouseClicked
@@ -786,6 +797,10 @@ public class Principal extends javax.swing.JFrame {
         }
         
     }//GEN-LAST:event_Btn_CreaTrabajoMouseClicked
+
+    private void jButton8MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton8MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton8MouseClicked
     public static void main(String args[]) {
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
@@ -851,6 +866,7 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JButton jButton5;
     private javax.swing.JButton jButton6;
     private javax.swing.JButton jButton7;
+    private javax.swing.JButton jButton8;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;

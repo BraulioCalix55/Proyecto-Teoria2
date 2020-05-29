@@ -5,6 +5,8 @@
  */
 package principal;
 
+import org.bson.Document;
+
 /**
  *
  * @author User
@@ -54,6 +56,15 @@ public class Solicitud {
         this.tipopuesto = tipopuesto;
     }
 
+    public Document toDocument(){
+        Document d=new Document();
+        d.append("ID Solicitud", this.id)
+        .append("CIF", this.cif)
+        .append("Nombre de la persona", this.nompersona)
+        .append("Tipo de puesto", this.tipopuesto);
+        
+        return d;
+    }
 
     
             

@@ -10,6 +10,7 @@ import com.mongodb.client.MongoClients;
 import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoCursor;
 import com.mongodb.client.MongoDatabase;
+import java.util.ArrayList;
 import principal.Persona;
 
 /**
@@ -29,23 +30,51 @@ public class PersonaConexion {
         MongoDatabase database = mongoClient.getDatabase("ProyectoTBD2");
         try {
             MongoCollection<org.bson.Document> collection=database.getCollection("Personas");
-            collection.insertOne(new org.bson.Document ("Nombre", persona.getNombre())
-                    .append("Genero", persona.getGenero())
-                    .append("Edad", persona.getEdad())
-                    .append("Estado Civil", persona.getLegal())
-                    .append("Hijos", persona.getHijos())
-                    .append("Enfermedades Previas", persona.getEnfermedad())
-                    .append("Titulo", persona.getTitulo())
-                    .append("Indice", persona.getIndice())
-                    .append("Años de Experiencia", persona.getAños())
-                    .append("Tipo de Empleo", persona.getEmpleo())
-                    .append("Contrato", persona.getContrato())
-                    .append("Sueldo", persona.getSueldo()));
+            collection.insertOne(persona.toDocument());
         } catch (Exception e) {
             e.printStackTrace();
         }
     }
     
     
+    public ArrayList obtenerPersonas(){
+        ArrayList<String> personas=new ArrayList();
+        MongoClient mongoClient = MongoClients.create(
+        "mongodb+srv://admin:Cuaderno2020@database-1-ubdcf.mongodb.net/ProyectoTBD2?retryWrites=true&w=majority");
+        MongoDatabase database = mongoClient.getDatabase("ProyectoTBD2");
+        try {
+            MongoCollection<org.bson.Document> collection=database.getCollection("Proyecto");
+            MongoCursor<org.bson.Document> cursor=collection.find().iterator();
+            Persona p=new Persona();
+            String id="", 
+            genero="",
+            nombre="",
+            edad="",
+            legal="",
+            hijos="",
+            enfermedad="",
+            antecedentes="",
+            titulo="",
+            indice="",
+            años="",
+            empleo="",
+            contrato="",
+            sueldo="";
+            
+            while(cursor.hasNext()){
+                String principal="", principal1="";
+                principal=cursor.next().toString();
+                
+                
+            }
+            
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        
+        
+        return personas;
+    }
     
 }

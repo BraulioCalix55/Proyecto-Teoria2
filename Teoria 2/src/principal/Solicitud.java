@@ -3,23 +3,23 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package teoria.pkg2;
+package principal;
 
 /**
  *
  * @author User
  */
-public class solicitud {
-    private String id,idempre,nompersona,tipoemp;
+public class Solicitud {
+    private String id,cif,nompersona,tipopuesto;
 
-    public solicitud(String id, String idempre, String nompersona, String tipoemp) {
+    public Solicitud(String id, String idempre, String nompersona, String tipopuesto) {
         this.id = id;
-        this.idempre = idempre;
+        this.cif = idempre;
         this.nompersona = nompersona;
-        this.tipoemp = tipoemp;
+        this.tipopuesto=tipopuesto;
     }
 
-    public solicitud() {
+    public Solicitud() {
     }
 
     public String getId() {
@@ -30,12 +30,12 @@ public class solicitud {
         this.id = id;
     }
 
-    public String getIdempre() {
-        return idempre;
+    public String getCif() {
+        return cif;
     }
 
-    public void setIdempre(String idempre) {
-        this.idempre = idempre;
+    public void setCif(String idempre) {
+        this.cif = idempre;
     }
 
     public String getNompersona() {
@@ -46,13 +46,15 @@ public class solicitud {
         this.nompersona = nompersona;
     }
 
-    public String getTipoemp() {
-        return tipoemp;
+    public String getTipopuesto() {
+        return tipopuesto;
     }
 
-    public void setTipoemp(String tipoemp) {
-        this.tipoemp = tipoemp;
+    public void setTipopuesto(String tipopuesto) {
+        this.tipopuesto = tipopuesto;
     }
+
+
     
             
     

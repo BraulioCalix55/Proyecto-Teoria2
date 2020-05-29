@@ -3,7 +3,14 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package teoria.pkg2;
+package principal;
+
+import com.mongodb.BasicDBObject;
+import com.mongodb.client.MongoClient;
+import com.mongodb.client.MongoClients;
+import com.mongodb.client.MongoCollection;
+import com.mongodb.client.MongoCursor;
+import com.mongodb.client.MongoDatabase;
 
 /**
  *
@@ -143,5 +150,6 @@ private String id,genero,nombre,edad,legal,hijos,enfermedad,antecedentes,titulo,
     public void setSueldo(String sueldo) {
         this.sueldo = sueldo;
     }
+    
     
 }

@@ -24,6 +24,11 @@ public class Empresa {
         this.direccion = direccion;
     }
 
+    public Empresa(String nombre) {
+        this.nombre = nombre;
+    }
+    
+
     public String getNombre() {
         return nombre;
     }
@@ -66,5 +71,10 @@ public class Empresa {
         return d;
     }
     
+    public Document toDocumentName(){
+        Document d=new Document();
+        d.append("Nombre de la empresa", this.nombre);
+        return d;
+    }
     
 }

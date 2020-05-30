@@ -70,6 +70,7 @@ public class PersonaConexion {
                         row[i]=persona.get(i);
                     }
                 }
+                persona.clear();
                 modelo.addRow(row);
             }
             

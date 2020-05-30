@@ -5,6 +5,7 @@
  */
 package conexiones;
 
+import com.mongodb.client.FindIterable;
 import com.mongodb.client.MongoClient;
 import com.mongodb.client.MongoClients;
 import com.mongodb.client.MongoCollection;
@@ -13,6 +14,8 @@ import com.mongodb.client.MongoDatabase;
 import java.util.ArrayList;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
+import org.bson.Document;
+import principal.Empresa;
 import principal.Solicitud;
 
 /**
@@ -45,6 +48,7 @@ public class SolicitudConexion {
     
     public void obtenerPersonas(JTable tabla){
         DefaultTableModel modelo= (DefaultTableModel)tabla.getModel();
+        modelo.setNumRows(0);
         ArrayList<String> persona=new ArrayList();
         MongoClient mongoClient = MongoClients.create(
         "mongodb+srv://admin:Cuaderno2020@database-1-ubdcf.mongodb.net/ProyectoTBD2?retryWrites=true&w=majority");
@@ -70,6 +74,7 @@ public class SolicitudConexion {
                         row[i]=persona.get(i);
                     }
                 }
+                persona.clear();
                 modelo.addRow(row);
             }
             
@@ -79,5 +84,37 @@ public class SolicitudConexion {
             e.printStackTrace();
         }
 
+    }
+    
+    
+     public Document obtenerSolicitud(Solicitud em){
+        MongoClient mongoClient = MongoClients.create(
+        "mongodb+srv://admin:Cuaderno2020@database-1-ubdcf.mongodb.net/ProyectoTBD2?retryWrites=true&w=majority");
+        MongoDatabase database = mongoClient.getDatabase("ProyectoTBD2");
+        Document r=new Document();
+        
+        try {
+            MongoCollection<org.bson.Document> collection=database.getCollection("Solicitudes");
+            Document d=em.toDocumentName();
+            FindIterable<Document> result=collection.find(d);
+            r=result.first();          
+            
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        
+        return r;
+    }
+    
+    public void reemplazarSolicitud(Document viejo, Document nuevo){
+        MongoClient mongoClient = MongoClients.create(
+        "mongodb+srv://admin:Cuaderno2020@database-1-ubdcf.mongodb.net/ProyectoTBD2?retryWrites=true&w=majority");
+        MongoDatabase database = mongoClient.getDatabase("ProyectoTBD2");
+        try {
+            MongoCollection<org.bson.Document> collection=database.getCollection("Solicitudes");
+            collection.replaceOne(viejo, nuevo);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 }

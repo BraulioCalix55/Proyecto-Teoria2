@@ -17,6 +17,12 @@ public class Plaza {
     public Plaza() {
     }
 
+    public Plaza(String empresa) {
+        this.empresa = empresa;
+    }
+    
+    
+
     public Plaza(String empresa,String promedio, String sanitario, String edad, String genero, String titulo, String años) {
         this.empresa=empresa;
         this.promedio = promedio;
@@ -94,6 +100,12 @@ public class Plaza {
         .append("Requisito de genero ", this.genero)
         .append("Requisito de titulo ", this.titulo)
         .append("Requisito de años de experiencia ", this.años);
+        return d;
+    }
+    
+    public Document toDocumentName(){
+        Document d=new Document();
+        d.append("Empresa ", this.empresa);
         return d;
     }
     

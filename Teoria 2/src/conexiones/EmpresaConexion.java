@@ -5,14 +5,20 @@
  */
 package conexiones;
 
+import com.mongodb.BasicDBObject;
+import com.mongodb.DBObject;
+import com.mongodb.client.FindIterable;
 import com.mongodb.client.MongoClient;
 import com.mongodb.client.MongoClients;
 import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoCursor;
 import com.mongodb.client.MongoDatabase;
+import com.mongodb.client.model.Filters;
+import com.mongodb.client.model.Updates;
 import java.util.ArrayList;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
+import org.bson.Document;
 import principal.Empresa;
 
 /**
@@ -44,6 +50,7 @@ public class EmpresaConexion {
     
     public void obtenerEmpresas(JTable tabla){
         DefaultTableModel modelo= (DefaultTableModel)tabla.getModel();
+        modelo.setNumRows(0);
         ArrayList<String> persona=new ArrayList();
         MongoClient mongoClient = MongoClients.create(
         "mongodb+srv://admin:Cuaderno2020@database-1-ubdcf.mongodb.net/ProyectoTBD2?retryWrites=true&w=majority");
@@ -69,6 +76,7 @@ public class EmpresaConexion {
                         row[i]=persona.get(i);
                     }
                 }
+                persona.clear();
                 modelo.addRow(row);
             }
             
@@ -79,6 +87,42 @@ public class EmpresaConexion {
         }
 
     }
+    
+    public Document obtenerEmpresa(Empresa em){
+        MongoClient mongoClient = MongoClients.create(
+        "mongodb+srv://admin:Cuaderno2020@database-1-ubdcf.mongodb.net/ProyectoTBD2?retryWrites=true&w=majority");
+        MongoDatabase database = mongoClient.getDatabase("ProyectoTBD2");
+        Document r=new Document();
+        
+        try {
+            MongoCollection<org.bson.Document> collection=database.getCollection("Empresas");
+            Document d=em.toDocumentName();
+            FindIterable<Document> result=collection.find(d);
+            r=result.first();
+            if(r==null){
+            }            
+            
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        
+        return r;
+    }
+    
+    public void reemplazarEmpresa(Document viejo, Document nuevo){
+        MongoClient mongoClient = MongoClients.create(
+        "mongodb+srv://admin:Cuaderno2020@database-1-ubdcf.mongodb.net/ProyectoTBD2?retryWrites=true&w=majority");
+        MongoDatabase database = mongoClient.getDatabase("ProyectoTBD2");
+        try {
+            MongoCollection<org.bson.Document> collection=database.getCollection("Empresas");
+            collection.replaceOne(viejo, nuevo);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+    
+    
+    
     
     
 }

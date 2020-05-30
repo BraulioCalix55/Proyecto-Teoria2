@@ -5,7 +5,10 @@ import conexiones.PersonaConexion;
 import conexiones.EmpresaConexion;
 import conexiones.PlazaConexion;
 import java.awt.SystemColor;
+import java.util.ArrayList;
 import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
+import org.bson.Document;
 
 public class Principal extends javax.swing.JFrame {
     
@@ -129,6 +132,45 @@ public class Principal extends javax.swing.JFrame {
         jLabel42 = new javax.swing.JLabel();
         jLabel43 = new javax.swing.JLabel();
         empresa_plaza = new javax.swing.JTextField();
+        Mod_Empresas = new javax.swing.JDialog();
+        lab_empresa1 = new javax.swing.JLabel();
+        jLabel44 = new javax.swing.JLabel();
+        jLabel45 = new javax.swing.JLabel();
+        jLabel46 = new javax.swing.JLabel();
+        jLabel47 = new javax.swing.JLabel();
+        nombre_empresa1 = new javax.swing.JTextField();
+        cif_empresa1 = new javax.swing.JTextField();
+        director_empresa1 = new javax.swing.JTextField();
+        direccion_empresa1 = new javax.swing.JTextField();
+        C_Empresa1 = new javax.swing.JButton();
+        Mod_Solicitud = new javax.swing.JDialog();
+        solicitud_id1 = new javax.swing.JTextField();
+        jLabel48 = new javax.swing.JLabel();
+        jLabel49 = new javax.swing.JLabel();
+        jLabel50 = new javax.swing.JLabel();
+        jLabel51 = new javax.swing.JLabel();
+        btn_crearSoli1 = new javax.swing.JButton();
+        Lab_emple1 = new javax.swing.JLabel();
+        solicitud_cif1 = new javax.swing.JTextField();
+        solicitud_persona1 = new javax.swing.JTextField();
+        solicitud_puesto1 = new javax.swing.JTextField();
+        Mod_Plaza = new javax.swing.JDialog();
+        plaza_sanita1 = new javax.swing.JTextField();
+        jLabel52 = new javax.swing.JLabel();
+        jLabel53 = new javax.swing.JLabel();
+        jLabel54 = new javax.swing.JLabel();
+        jLabel55 = new javax.swing.JLabel();
+        plaza_gen1 = new javax.swing.JComboBox<>();
+        jLabel56 = new javax.swing.JLabel();
+        Plaza_crear1 = new javax.swing.JButton();
+        jLabel57 = new javax.swing.JLabel();
+        plaza_titulo1 = new javax.swing.JComboBox<>();
+        jLabel58 = new javax.swing.JLabel();
+        jLabel59 = new javax.swing.JLabel();
+        empresa_plaza1 = new javax.swing.JTextField();
+        plaza_años1 = new javax.swing.JTextField();
+        plaza_prom1 = new javax.swing.JTextField();
+        plaza_edad1 = new javax.swing.JTextField();
         jPanel1 = new javax.swing.JPanel();
         Crear = new javax.swing.JButton();
         jLabel34 = new javax.swing.JLabel();
@@ -247,7 +289,7 @@ public class Principal extends javax.swing.JFrame {
 
         jLabel38.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/puesto de trabajo.png"))); // NOI18N
 
-        btn_creaTrabajo.setText("Puesto de trabajo");
+        btn_creaTrabajo.setText("Plaza de trabajo");
         btn_creaTrabajo.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 btn_creaTrabajoMouseClicked(evt);
@@ -793,7 +835,7 @@ public class Principal extends javax.swing.JFrame {
         jLabel40.setText("Genero: ");
         Crear_Plaza.getContentPane().add(jLabel40, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 280, -1, -1));
 
-        Plaza_crear.setText("Crear");
+        Plaza_crear.setText("Crear Plaza");
         Plaza_crear.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 Plaza_crearMouseClicked(evt);
@@ -809,13 +851,229 @@ public class Principal extends javax.swing.JFrame {
         Crear_Plaza.getContentPane().add(plaza_titulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 320, 100, -1));
 
         jLabel42.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel42.setText("Crear plaza de trabajo");
-        Crear_Plaza.getContentPane().add(jLabel42, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 10, -1, -1));
+        jLabel42.setText("Crear Plazas de Trabajo");
+        Crear_Plaza.getContentPane().add(jLabel42, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 10, -1, -1));
 
         jLabel43.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jLabel43.setText("Años experiencia:");
         Crear_Plaza.getContentPane().add(jLabel43, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 120, -1, -1));
         Crear_Plaza.getContentPane().add(empresa_plaza, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 80, 100, -1));
+
+        Mod_Empresas.setTitle("Crear empresa");
+
+        lab_empresa1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        lab_empresa1.setText("Modificar Empresa");
+
+        jLabel44.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel44.setText("Nombre");
+
+        jLabel45.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel45.setText("CIF");
+
+        jLabel46.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel46.setText("Director");
+
+        jLabel47.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel47.setText("Direccion");
+
+        nombre_empresa1.setEditable(false);
+
+        C_Empresa1.setText("Modificar Empresa");
+        C_Empresa1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                C_Empresa1MouseClicked(evt);
+            }
+        });
+
+        javax.swing.GroupLayout Mod_EmpresasLayout = new javax.swing.GroupLayout(Mod_Empresas.getContentPane());
+        Mod_Empresas.getContentPane().setLayout(Mod_EmpresasLayout);
+        Mod_EmpresasLayout.setHorizontalGroup(
+            Mod_EmpresasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Mod_EmpresasLayout.createSequentialGroup()
+                .addContainerGap(41, Short.MAX_VALUE)
+                .addGroup(Mod_EmpresasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel44)
+                    .addComponent(jLabel45)
+                    .addComponent(jLabel46)
+                    .addComponent(jLabel47))
+                .addGap(73, 73, 73)
+                .addGroup(Mod_EmpresasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(nombre_empresa1)
+                    .addComponent(cif_empresa1)
+                    .addComponent(director_empresa1)
+                    .addComponent(direccion_empresa1, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(37, 37, 37))
+            .addGroup(Mod_EmpresasLayout.createSequentialGroup()
+                .addGroup(Mod_EmpresasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(Mod_EmpresasLayout.createSequentialGroup()
+                        .addGap(89, 89, 89)
+                        .addComponent(lab_empresa1, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(Mod_EmpresasLayout.createSequentialGroup()
+                        .addGap(96, 96, 96)
+                        .addComponent(C_Empresa1)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        Mod_EmpresasLayout.setVerticalGroup(
+            Mod_EmpresasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(Mod_EmpresasLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(lab_empresa1, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(29, 29, 29)
+                .addGroup(Mod_EmpresasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel44)
+                    .addComponent(nombre_empresa1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(28, 28, 28)
+                .addGroup(Mod_EmpresasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel45)
+                    .addComponent(cif_empresa1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(37, 37, 37)
+                .addGroup(Mod_EmpresasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel46)
+                    .addComponent(director_empresa1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(34, 34, 34)
+                .addGroup(Mod_EmpresasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel47)
+                    .addComponent(direccion_empresa1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 38, Short.MAX_VALUE)
+                .addComponent(C_Empresa1)
+                .addGap(26, 26, 26))
+        );
+
+        Mod_Solicitud.setTitle("Crear Solicitud");
+
+        solicitud_id1.setEditable(false);
+
+        jLabel48.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel48.setText("ID");
+
+        jLabel49.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel49.setText("CIF Empresa");
+
+        jLabel50.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel50.setText("Nombre Persona");
+
+        jLabel51.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel51.setText("Tipo de puesto");
+
+        btn_crearSoli1.setText("Modificar solicitud");
+        btn_crearSoli1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btn_crearSoli1MouseClicked(evt);
+            }
+        });
+
+        Lab_emple1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        Lab_emple1.setText("Modificar solicitud de empleo");
+
+        javax.swing.GroupLayout Mod_SolicitudLayout = new javax.swing.GroupLayout(Mod_Solicitud.getContentPane());
+        Mod_Solicitud.getContentPane().setLayout(Mod_SolicitudLayout);
+        Mod_SolicitudLayout.setHorizontalGroup(
+            Mod_SolicitudLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(Mod_SolicitudLayout.createSequentialGroup()
+                .addGap(49, 49, 49)
+                .addGroup(Mod_SolicitudLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(Mod_SolicitudLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addComponent(jLabel50)
+                        .addComponent(jLabel51, javax.swing.GroupLayout.Alignment.LEADING))
+                    .addComponent(jLabel49)
+                    .addComponent(jLabel48))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(Mod_SolicitudLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(solicitud_cif1)
+                    .addComponent(solicitud_id1)
+                    .addComponent(solicitud_puesto1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 90, Short.MAX_VALUE)
+                    .addComponent(solicitud_persona1, javax.swing.GroupLayout.DEFAULT_SIZE, 90, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Mod_SolicitudLayout.createSequentialGroup()
+                .addContainerGap(60, Short.MAX_VALUE)
+                .addComponent(Lab_emple1)
+                .addContainerGap(36, Short.MAX_VALUE))
+            .addGroup(Mod_SolicitudLayout.createSequentialGroup()
+                .addGap(88, 88, 88)
+                .addComponent(btn_crearSoli1)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        Mod_SolicitudLayout.setVerticalGroup(
+            Mod_SolicitudLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(Mod_SolicitudLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(Lab_emple1)
+                .addGap(32, 32, 32)
+                .addGroup(Mod_SolicitudLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(solicitud_id1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel48))
+                .addGap(47, 47, 47)
+                .addGroup(Mod_SolicitudLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel49)
+                    .addComponent(solicitud_cif1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(55, 55, 55)
+                .addGroup(Mod_SolicitudLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel50)
+                    .addComponent(solicitud_persona1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(48, 48, 48)
+                .addGroup(Mod_SolicitudLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel51)
+                    .addComponent(solicitud_puesto1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 51, Short.MAX_VALUE)
+                .addComponent(btn_crearSoli1)
+                .addContainerGap())
+        );
+
+        Mod_Plaza.setTitle("Crear Plaza");
+        Mod_Plaza.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        Mod_Plaza.getContentPane().add(plaza_sanita1, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 240, 100, -1));
+
+        jLabel52.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        jLabel52.setText("Empresa Solicitante: ");
+        Mod_Plaza.getContentPane().add(jLabel52, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 80, -1, -1));
+
+        jLabel53.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        jLabel53.setText("Promedio:");
+        Mod_Plaza.getContentPane().add(jLabel53, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 160, -1, -1));
+
+        jLabel54.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        jLabel54.setText("Edad:");
+        Mod_Plaza.getContentPane().add(jLabel54, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 200, -1, -1));
+
+        jLabel55.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        jLabel55.setText("Requisito Sanitario:");
+        Mod_Plaza.getContentPane().add(jLabel55, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 240, -1, -1));
+
+        plaza_gen1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "M", "F" }));
+        Mod_Plaza.getContentPane().add(plaza_gen1, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 280, -1, -1));
+
+        jLabel56.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        jLabel56.setText("Genero: ");
+        Mod_Plaza.getContentPane().add(jLabel56, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 280, -1, -1));
+
+        Plaza_crear1.setText("Modificar");
+        Plaza_crear1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Plaza_crear1MouseClicked(evt);
+            }
+        });
+        Mod_Plaza.getContentPane().add(Plaza_crear1, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 380, -1, -1));
+
+        jLabel57.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        jLabel57.setText("Requisito Titulo:");
+        Mod_Plaza.getContentPane().add(jLabel57, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 320, -1, -1));
+
+        plaza_titulo1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Licenciatura", "Ingenieria", "Doctorado" }));
+        Mod_Plaza.getContentPane().add(plaza_titulo1, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 320, 100, -1));
+
+        jLabel58.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel58.setText("Modificar plaza de trabajo");
+        Mod_Plaza.getContentPane().add(jLabel58, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 10, -1, -1));
+
+        jLabel59.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        jLabel59.setText("Años experiencia:");
+        Mod_Plaza.getContentPane().add(jLabel59, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 120, -1, -1));
+
+        empresa_plaza1.setEditable(false);
+        Mod_Plaza.getContentPane().add(empresa_plaza1, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 80, 100, -1));
+        Mod_Plaza.getContentPane().add(plaza_años1, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 120, 100, -1));
+        Mod_Plaza.getContentPane().add(plaza_prom1, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 160, 100, -1));
+        Mod_Plaza.getContentPane().add(plaza_edad1, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 200, 100, -1));
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Ventana Principal");
@@ -934,7 +1192,7 @@ public class Principal extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(this, "Solicitud modificado exitosamente");
         } else {
             //los crea
-            Solicitud soli = new Solicitud();
+            Solicitud soli = new Solicitud(id, idempre,nompersona,tipoemp);
             SolicitudConexion sc = new SolicitudConexion(soli);
             sc.crearSolicitud();
             
@@ -1003,8 +1261,8 @@ public class Principal extends javax.swing.JFrame {
         seteo();
         solicitud = true;
         if (gestionar == true && solicitud == true) {
-            Lab_emple.setText("Modificar Empleo");
-            btn_crearSoli.setText("Modificar");
+            //Lab_emple.setText("Modificar Empleo");
+            //btn_crearSoli.setText("Modificar");
             Modificar_Solicitudes.setModal(true);
             Modificar_Solicitudes.pack();
             Modificar_Solicitudes.setLocationRelativeTo(this);
@@ -1013,7 +1271,7 @@ public class Principal extends javax.swing.JFrame {
             solicitud = false;
             gestionar = false;
         } else {
-            btn_crearSoli.setText("Crear");
+           // btn_crearSoli.setText("Crear");
             Crear_Solicitud.setModal(true);
             Crear_Solicitud.pack();
             Crear_Solicitud.setLocationRelativeTo(this);
@@ -1033,6 +1291,19 @@ public class Principal extends javax.swing.JFrame {
     }//GEN-LAST:event_btn_listar_personasMouseClicked
 
     private void btn_modi_personaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_modi_personaMouseClicked
+       if(tabla_personas.getSelectedRow()==-1){
+           JOptionPane.showMessageDialog(this, "Debe seleccionar un elemento de la tabla para poder modificar");
+       }
+       else{
+           DefaultTableModel modelo=(DefaultTableModel)tabla_personas.getModel();
+           String ObjectID=(String)modelo.getValueAt(tabla_personas.getSelectedRow(), 0);
+           System.out.println("Object ID "+ObjectID);
+       }
+        
+        
+        
+        
+        
         /*
        
         NO SE COMO SE CARGAN LOS DATOS PERO ESTA TODO PARA PONERLOS
@@ -1051,44 +1322,147 @@ public class Principal extends javax.swing.JFrame {
         Personas_salario.setText("");
         persona_id.setText("");
          */
-        System.out.println("modi");
-        btn_CrearPersonaFinal.setText("Modificar");
-        Crear_Personas.setModal(true);
-        Crear_Personas.pack();
-        Crear_Personas.setLocationRelativeTo(this);
-        Crear_Personas.setVisible(true);
+//        System.out.println("modi");
+//        btn_CrearPersonaFinal.setText("Modificar");
+//        Crear_Personas.setModal(true);
+//        Crear_Personas.pack();
+//        Crear_Personas.setLocationRelativeTo(this);
+//        Crear_Personas.setVisible(true);
     }//GEN-LAST:event_btn_modi_personaMouseClicked
 
     private void btn_modifi_empresaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_modifi_empresaMouseClicked
+        
+        if(tabla_empresas.getSelectedRow()==-1){
+           JOptionPane.showMessageDialog(this, "Debe seleccionar un elemento de la tabla para poder modificar");
+       }
+       else{
+           DefaultTableModel modelo=(DefaultTableModel)tabla_empresas.getModel();
+           String nombre=(String)modelo.getValueAt(tabla_empresas.getSelectedRow(), 1);
+           Empresa e=new Empresa(nombre);
+           EmpresaConexion ec=new EmpresaConexion();
+           consulta=ec.obtenerEmpresa(e);
+           ArrayList<String> empresita=new ArrayList();
+           String principal="";
+            String[] p;
+            principal=consulta.toString();
+            p=principal.split(",");
+            for (int i = 0; i <p.length; i++) {
+                String f[]=p[i].split("=");
+                    empresita.add(f[1]);
+            }
+            nombre_empresa1.setText(empresita.get(1));
+            cif_empresa1.setText(empresita.get(2));
+            director_empresa1.setText(empresita.get(3));
+            direccion_empresa1.setText(empresita.get(4));
+            Mod_Empresas.setModal(true);
+            Mod_Empresas.pack();
+            Mod_Empresas.setLocationRelativeTo(this);
+            Mod_Empresas.setVisible(true);    
+       }
         /*        
         nombre_empresa.setText();
         cif_empresa.setText();
         direccion_empresa.setText(string);
         director_empresa.setText();
          */
-        Crear_Empresas.setModal(true);
-        Crear_Empresas.pack();
-        Crear_Empresas.setLocationRelativeTo(this);
-        Crear_Empresas.setVisible(true);
+//        Crear_Empresas.setModal(true);
+//        Crear_Empresas.pack();
+//        Crear_Empresas.setLocationRelativeTo(this);
+//        Crear_Empresas.setVisible(true);
 
         // TODO add your handling code here:
     }//GEN-LAST:event_btn_modifi_empresaMouseClicked
 
     private void btn_mod_soliMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_mod_soliMouseClicked
         // TODO add your handling code here:
+        if(Tabla_solicitudes.getSelectedRow()==-1){
+           JOptionPane.showMessageDialog(this, "Debe seleccionar un elemento de la tabla para poder modificar");
+       }
+       else{
+           DefaultTableModel modelo=(DefaultTableModel)Tabla_solicitudes.getModel();
+           String id=(String)modelo.getValueAt(Tabla_solicitudes.getSelectedRow(), 1);
+            System.out.println("ID "+id);
+           Solicitud s=new Solicitud(id);
+           SolicitudConexion sc=new SolicitudConexion();
+           consulta=new Document();
+           consulta=sc.obtenerSolicitud(s);
+           ArrayList<String> empresita=new ArrayList();
+           String principal="";
+            String[] p;
+            principal=consulta.toString();
+            p=principal.split(",");
+            for (int i = 0; i <p.length; i++) {
+                String f[]=p[i].split("=");
+                    empresita.add(f[1]);
+            }
+            solicitud_id1.setText(empresita.get(1));
+            solicitud_cif1.setText(empresita.get(2));
+            solicitud_persona1.setText(empresita.get(3));
+            solicitud_puesto1.setText(empresita.get(4));
+            Mod_Solicitud.setModal(true);
+            Mod_Solicitud.pack();
+            Mod_Solicitud.setLocationRelativeTo(this);
+            Mod_Solicitud.setVisible(true);    
+       }
+        
         /*Solicitud_persona.setText("");
         solicitud_id.setText(string);
         solicitud_puesto.setText(string);
         solicitud_cif.setText();*/
-        Crear_Solicitud.pack();
-        Crear_Solicitud.setModal(true);
-        Crear_Solicitud.setLocationRelativeTo(this);
-        Crear_Solicitud.setVisible(true);
+//        Crear_Solicitud.pack();
+//        Crear_Solicitud.setModal(true);
+//        Crear_Solicitud.setLocationRelativeTo(this);
+//        Crear_Solicitud.setVisible(true);
 
     }//GEN-LAST:event_btn_mod_soliMouseClicked
 
     private void btn_modi_plazaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_modi_plazaMouseClicked
         // TODO add your handling code here:
+        if(tabla_Plazas.getSelectedRow()==-1){
+           JOptionPane.showMessageDialog(this, "Debe seleccionar un elemento de la tabla para poder modificar");
+       }
+       else{
+           DefaultTableModel modelo=(DefaultTableModel)tabla_Plazas.getModel();
+           String empresa=(String)modelo.getValueAt(tabla_Plazas.getSelectedRow(), 1);
+            System.out.println("ID "+empresa);
+           Plaza pl=new Plaza(empresa);
+           PlazaConexion pc=new PlazaConexion();
+           consulta=new Document();
+           consulta=pc.obtenerPlaza(pl);
+           ArrayList<String> empresita=new ArrayList();
+           String principal="";
+           String[] p;
+            principal=consulta.toString();
+            p=principal.split(",");
+            for (int i = 0; i <p.length; i++) {
+                String f[]=p[i].split("=");
+                    empresita.add(f[1]);
+            }
+            empresa_plaza1.setText(empresita.get(1));
+            plaza_prom1.setText(empresita.get(2));
+            plaza_sanita1.setText(empresita.get(3));
+            plaza_edad1.setText(empresita.get(4));
+            if(empresita.get(5)=="M"){
+                plaza_gen1.setSelectedIndex(0);
+            }
+            else{
+                plaza_gen1.setSelectedIndex(1);
+            }
+            if(empresita.get(6).equals("Licenciatura")){
+                plaza_titulo1.setSelectedIndex(0);
+            }
+            else if (empresita.get(6).equals("Ingenieria")){
+                plaza_titulo1.setSelectedIndex(1);
+            }
+            else{
+                plaza_titulo1.setSelectedIndex(2);
+            }
+            plaza_años1.setText(empresita.get(7));
+            Mod_Plaza.setModal(true);
+            Mod_Plaza.pack();
+            Mod_Plaza.setLocationRelativeTo(this);
+            Mod_Plaza.setVisible(true);    
+       }
     }//GEN-LAST:event_btn_modi_plazaMouseClicked
 
     private void btn_listar_plazasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_listar_plazasMouseClicked
@@ -1148,6 +1522,67 @@ public class Principal extends javax.swing.JFrame {
         sc.obtenerPersonas(Tabla_solicitudes);
         JOptionPane.showMessageDialog(this, "Listado exitosamente");
     }//GEN-LAST:event_jButton2MouseClicked
+
+    private void C_Empresa1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_C_Empresa1MouseClicked
+        // TODO add your handling code here:
+        String nombre, cif, director, direccion;
+        nombre=nombre_empresa1.getText();
+        nombre_empresa1.setText("");
+        cif=cif_empresa1.getText();
+        cif_empresa1.setText("");
+        director=director_empresa1.getText();
+        director_empresa1.setText("");
+        direccion=direccion_empresa1.getText();
+        direccion_empresa1.setText("");
+        Empresa e=new Empresa(nombre, cif, director, direccion);
+        EmpresaConexion ec=new EmpresaConexion(e);
+        ec.reemplazarEmpresa(consulta, e.toDocument());
+        ec.obtenerEmpresas(tabla_empresas);
+        JOptionPane.showMessageDialog(this, "Se modifico exitosamente");
+        Mod_Empresas.dispose();
+    }//GEN-LAST:event_C_Empresa1MouseClicked
+
+    private void btn_crearSoli1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_crearSoli1MouseClicked
+        // TODO add your handling code here:
+        String id, cif, nombrePersona, tipoPuesto;
+        id=solicitud_id1.getText();
+        solicitud_id1.setText("");
+        cif=solicitud_cif1.getText();
+        solicitud_cif1.setText("");
+        nombrePersona=solicitud_persona1.getText();
+        solicitud_persona1.setText("");
+        tipoPuesto=solicitud_puesto1.getText();
+        solicitud_puesto1.setText("");
+        Solicitud s=new Solicitud(id, cif, nombrePersona, tipoPuesto);
+        SolicitudConexion sc=new SolicitudConexion(s);
+        sc.reemplazarSolicitud(consulta, s.toDocument());
+        sc.obtenerPersonas(Tabla_solicitudes);
+        JOptionPane.showMessageDialog(this, "Se modifico exitosamente");
+        Mod_Solicitud.dispose();
+    }//GEN-LAST:event_btn_crearSoli1MouseClicked
+
+    private void Plaza_crear1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Plaza_crear1MouseClicked
+        // TODO add your handling code here:
+        String empresi,promedio,sanitario,edad,genero, titulo, ano;
+        empresi=empresa_plaza1.getText();
+        empresa_plaza1.setText("");
+        promedio=plaza_prom1.getText();
+        plaza_prom1.setText("");
+        sanitario=plaza_sanita1.getText();
+        plaza_sanita1.setText("");
+        edad=plaza_edad1.getText();
+        plaza_edad1.setText("");
+        genero=plaza_gen1.getSelectedItem().toString();
+        titulo=plaza_titulo1.getSelectedItem().toString();
+        ano=plaza_años1.getText();
+        plaza_años1.setText("");
+        Plaza pl=new Plaza(empresi,promedio,sanitario,edad,genero,titulo,ano);
+        PlazaConexion plc=new PlazaConexion(pl);
+        plc.reemplazarPlaza(consulta, pl.toDocument());
+        plc.obtenerPlazas(tabla_Plazas);
+        JOptionPane.showMessageDialog(this, "Se modifico exitosamente");
+        Mod_Plaza.dispose();
+    }//GEN-LAST:event_Plaza_crear1MouseClicked
     public static void main(String args[]) {
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
@@ -1175,13 +1610,18 @@ public class Principal extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Btn_CreaTrabajo;
     private javax.swing.JButton C_Empresa;
+    private javax.swing.JButton C_Empresa1;
     private javax.swing.JButton Crear;
     private javax.swing.JDialog Crear_Empresas;
     private javax.swing.JDialog Crear_Personas;
     private javax.swing.JDialog Crear_Plaza;
     private javax.swing.JDialog Crear_Solicitud;
     private javax.swing.JLabel Lab_emple;
+    private javax.swing.JLabel Lab_emple1;
     private javax.swing.JDialog Menu_Creacion;
+    private javax.swing.JDialog Mod_Empresas;
+    private javax.swing.JDialog Mod_Plaza;
+    private javax.swing.JDialog Mod_Solicitud;
     private javax.swing.JButton Modificar1;
     private javax.swing.JDialog Modificar_Empresas;
     private javax.swing.JDialog Modificar_Personas;
@@ -1201,6 +1641,7 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> Persona_titulo;
     private javax.swing.JTextField Personas_salario;
     private javax.swing.JButton Plaza_crear;
+    private javax.swing.JButton Plaza_crear1;
     private javax.swing.JTextField Solicitud_persona;
     private javax.swing.JTable Tabla_solicitudes;
     private javax.swing.JButton btn_CreaPersona;
@@ -1208,6 +1649,7 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JButton btn_creaTrabajo;
     private javax.swing.JButton btn_crearEmpresa;
     private javax.swing.JButton btn_crearSoli;
+    private javax.swing.JButton btn_crearSoli1;
     private javax.swing.JButton btn_elim_solicitud;
     private javax.swing.JButton btn_elimi_empresa;
     private javax.swing.JButton btn_elimi_personas;
@@ -1219,9 +1661,13 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JButton btn_modi_plaza;
     private javax.swing.JButton btn_modifi_empresa;
     private javax.swing.JTextField cif_empresa;
+    private javax.swing.JTextField cif_empresa1;
     private javax.swing.JTextField direccion_empresa;
+    private javax.swing.JTextField direccion_empresa1;
     private javax.swing.JTextField director_empresa;
+    private javax.swing.JTextField director_empresa1;
     private javax.swing.JTextField empresa_plaza;
+    private javax.swing.JTextField empresa_plaza1;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
@@ -1262,7 +1708,23 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel41;
     private javax.swing.JLabel jLabel42;
     private javax.swing.JLabel jLabel43;
+    private javax.swing.JLabel jLabel44;
+    private javax.swing.JLabel jLabel45;
+    private javax.swing.JLabel jLabel46;
+    private javax.swing.JLabel jLabel47;
+    private javax.swing.JLabel jLabel48;
+    private javax.swing.JLabel jLabel49;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel50;
+    private javax.swing.JLabel jLabel51;
+    private javax.swing.JLabel jLabel52;
+    private javax.swing.JLabel jLabel53;
+    private javax.swing.JLabel jLabel54;
+    private javax.swing.JLabel jLabel55;
+    private javax.swing.JLabel jLabel56;
+    private javax.swing.JLabel jLabel57;
+    private javax.swing.JLabel jLabel58;
+    private javax.swing.JLabel jLabel59;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
@@ -1273,18 +1735,30 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JLabel lab_empresa;
+    private javax.swing.JLabel lab_empresa1;
     private javax.swing.JLabel leb_perso;
     private javax.swing.JTextField nombre_empresa;
+    private javax.swing.JTextField nombre_empresa1;
     private javax.swing.JTextField persona_id;
     private javax.swing.JSpinner plaza_años;
+    private javax.swing.JTextField plaza_años1;
     private javax.swing.JSpinner plaza_edad;
+    private javax.swing.JTextField plaza_edad1;
     private javax.swing.JComboBox<String> plaza_gen;
+    private javax.swing.JComboBox<String> plaza_gen1;
     private javax.swing.JSpinner plaza_prom;
+    private javax.swing.JTextField plaza_prom1;
     private javax.swing.JTextField plaza_sanita;
+    private javax.swing.JTextField plaza_sanita1;
     private javax.swing.JComboBox<String> plaza_titulo;
+    private javax.swing.JComboBox<String> plaza_titulo1;
     private javax.swing.JTextField solicitud_cif;
+    private javax.swing.JTextField solicitud_cif1;
     private javax.swing.JTextField solicitud_id;
+    private javax.swing.JTextField solicitud_id1;
+    private javax.swing.JTextField solicitud_persona1;
     private javax.swing.JTextField solicitud_puesto;
+    private javax.swing.JTextField solicitud_puesto1;
     private javax.swing.JTable tabla_Plazas;
     private javax.swing.JTable tabla_empresas;
     private javax.swing.JTable tabla_personas;
@@ -1294,7 +1768,8 @@ boolean gestionar;
     boolean empresa;
     boolean solicitud;
     boolean plaza;
-    
+   Document consulta;
+    String nada;
     Persona p;
     
     public void seteo() {

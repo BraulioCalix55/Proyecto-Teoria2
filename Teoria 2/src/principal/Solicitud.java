@@ -21,6 +21,12 @@ public class Solicitud {
         this.tipopuesto=tipopuesto;
     }
 
+    public Solicitud(String id) {
+        this.id = id;
+    }
+    
+    
+
     public Solicitud() {
     }
 
@@ -63,6 +69,12 @@ public class Solicitud {
         .append("Nombre de la persona", this.nompersona)
         .append("Tipo de puesto", this.tipopuesto);
         
+        return d;
+    }
+    
+    public Document toDocumentName(){
+        Document d=new Document();
+        d.append("ID Solicitud", this.id);
         return d;
     }
 

@@ -3,10 +3,13 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/User/Desktop/Proyecto-Teoria2/Teoria%202/src/conexiones/PersonaConexion.java</file>
-            <file>file:/C:/Users/User/Desktop/Proyecto-Teoria2/Teoria%202/src/principal/Solicitud.java</file>
-            <file>file:/C:/Users/User/Desktop/Proyecto-Teoria2/Teoria%202/src/principal/Plaza.java</file>
-            <file>file:/C:/Users/User/Desktop/Proyecto-Teoria2/Teoria%202/src/principal/Principal.java</file>
+            <file>file:/C:/Users/mejia/Desktop/T2/Proyecto-Teoria2/Teoria%202/src/conexiones/SolicitudConexion.java</file>
+            <file>file:/C:/Users/mejia/Desktop/T2/Proyecto-Teoria2/Teoria%202/src/conexiones/EmpresaConexion.java</file>
+            <file>file:/C:/Users/mejia/Desktop/T2/Proyecto-Teoria2/Teoria%202/src/conexiones/PlazaConexion.java</file>
+            <file>file:/C:/Users/mejia/Desktop/T2/Proyecto-Teoria2/Teoria%202/src/principal/Solicitud.java</file>
+            <file>file:/C:/Users/mejia/Desktop/T2/Proyecto-Teoria2/Teoria%202/src/principal/Plaza.java</file>
+            <file>file:/C:/Users/mejia/Desktop/T2/Proyecto-Teoria2/Teoria%202/src/principal/Principal.java</file>
+            <file>file:/C:/Users/mejia/Desktop/T2/Proyecto-Teoria2/Teoria%202/src/principal/Empresa.java</file>
         </group>
     </open-files>
 </project-private>

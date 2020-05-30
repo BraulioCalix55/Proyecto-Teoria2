@@ -121,6 +121,18 @@ public class EmpresaConexion {
         }
     }
     
+    public void eliminarEmpresa(Document viejo){
+        MongoClient mongoClient = MongoClients.create(
+        "mongodb+srv://admin:Cuaderno2020@database-1-ubdcf.mongodb.net/ProyectoTBD2?retryWrites=true&w=majority");
+        MongoDatabase database = mongoClient.getDatabase("ProyectoTBD2");
+        try {
+            MongoCollection<org.bson.Document> collection=database.getCollection("Empresas");
+            collection.deleteOne(viejo);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+    
     
     
     

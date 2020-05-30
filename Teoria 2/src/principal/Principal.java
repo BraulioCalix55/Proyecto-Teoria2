@@ -637,6 +637,11 @@ public class Principal extends javax.swing.JFrame {
         });
 
         btn_elimi_empresa.setText("Eliminar");
+        btn_elimi_empresa.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btn_elimi_empresaMouseClicked(evt);
+            }
+        });
 
         jButton1.setText("Listar Empresas");
         jButton1.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -702,6 +707,11 @@ public class Principal extends javax.swing.JFrame {
         });
 
         btn_elim_solicitud.setText("Eliminar");
+        btn_elim_solicitud.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btn_elim_solicitudMouseClicked(evt);
+            }
+        });
 
         jButton2.setText("Listar Solicitudes");
         jButton2.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -767,6 +777,11 @@ public class Principal extends javax.swing.JFrame {
         });
 
         btn_elimi_plaza.setText("Eliminar");
+        btn_elimi_plaza.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btn_elimi_plazaMouseClicked(evt);
+            }
+        });
 
         btn_listar_plazas.setText("Listar Plazas");
         btn_listar_plazas.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -1583,6 +1598,82 @@ public class Principal extends javax.swing.JFrame {
         JOptionPane.showMessageDialog(this, "Se modifico exitosamente");
         Mod_Plaza.dispose();
     }//GEN-LAST:event_Plaza_crear1MouseClicked
+
+    private void btn_elimi_empresaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_elimi_empresaMouseClicked
+        // TODO add your handling code here:
+        if(tabla_empresas.getSelectedRow()==-1){
+            JOptionPane.showMessageDialog(this, "Debe seleciconar un elemento de la tabla para poder borrarlo");
+        }
+        else{
+            int d=JOptionPane.showConfirmDialog(this, "¿Esta seguro que desea eliminar este elemento?");
+            if(d==0){
+                System.out.println("Si");
+                DefaultTableModel modelo=(DefaultTableModel)tabla_empresas.getModel();
+                String nombre=(String)modelo.getValueAt(tabla_empresas.getSelectedRow(), 1);
+                Empresa e=new Empresa(nombre);
+                EmpresaConexion ec=new EmpresaConexion();
+                consulta=ec.obtenerEmpresa(e);
+                ec.eliminarEmpresa(consulta);
+                ec.obtenerEmpresas(tabla_empresas);
+                JOptionPane.showMessageDialog(this, "Registro eliminado exitosamente");
+
+            }
+            else{
+                System.out.println("No");
+            }
+        }
+    }//GEN-LAST:event_btn_elimi_empresaMouseClicked
+
+    private void btn_elim_solicitudMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_elim_solicitudMouseClicked
+        // TODO add your handling code here:
+        if(Tabla_solicitudes.getSelectedRow()==-1){
+            JOptionPane.showMessageDialog(this, "Debe seleciconar un elemento de la tabla para poder borrarlo");
+        }
+        else{
+            int d=JOptionPane.showConfirmDialog(this, "¿Esta seguro que desea eliminar este elemento?");
+            if(d==0){
+                System.out.println("Si");
+                 DefaultTableModel modelo=(DefaultTableModel)Tabla_solicitudes.getModel();
+                String id=(String)modelo.getValueAt(Tabla_solicitudes.getSelectedRow(), 1);
+                 System.out.println("ID "+id);
+                Solicitud s=new Solicitud(id);
+                SolicitudConexion sc=new SolicitudConexion();
+                consulta=new Document();
+                consulta=sc.obtenerSolicitud(s);
+                sc.eliminarSolicitud(consulta);
+                sc.obtenerPersonas(Tabla_solicitudes);
+                JOptionPane.showMessageDialog(this, "Registro eliminado exitosamente");
+            }
+            else{
+                System.out.println("No");
+            }
+        }
+    }//GEN-LAST:event_btn_elim_solicitudMouseClicked
+
+    private void btn_elimi_plazaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_elimi_plazaMouseClicked
+        // TODO add your handling code here:
+        if(tabla_Plazas.getSelectedRow()==-1){
+            JOptionPane.showMessageDialog(this, "Debe seleciconar un elemento de la tabla para poder borrarlo");
+        }
+        else{
+            int d=JOptionPane.showConfirmDialog(this, "¿Esta seguro que desea eliminar este elemento?");
+            if(d==0){
+                DefaultTableModel modelo=(DefaultTableModel)tabla_Plazas.getModel();
+                String empresa=(String)modelo.getValueAt(tabla_Plazas.getSelectedRow(), 1);
+                System.out.println("ID "+empresa);
+                Plaza pl=new Plaza(empresa);
+                PlazaConexion pc=new PlazaConexion();
+                consulta=new Document();
+                consulta=pc.obtenerPlaza(pl);
+                pc.eliminarPlaza(consulta);
+                pc.obtenerPlazas(tabla_Plazas);
+                JOptionPane.showMessageDialog(this, "Registro eliminado exitosamente");
+            }
+            else{
+                System.out.println("No");
+            }
+        }
+    }//GEN-LAST:event_btn_elimi_plazaMouseClicked
     public static void main(String args[]) {
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {

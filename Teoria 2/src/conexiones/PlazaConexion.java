@@ -94,6 +94,7 @@ public class PlazaConexion {
         try {
             MongoCollection<org.bson.Document> collection=database.getCollection("Plazas");
             Document d=em.toDocumentName();
+            
             FindIterable<Document> result=collection.find(d);
             r=result.first();          
             
@@ -110,6 +111,18 @@ public class PlazaConexion {
         try {
             MongoCollection<org.bson.Document> collection=database.getCollection("Plazas");
             collection.replaceOne(viejo, nuevo);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+    
+    public void eliminarPlaza(Document viejo){
+        MongoClient mongoClient = MongoClients.create(
+        "mongodb+srv://admin:Cuaderno2020@database-1-ubdcf.mongodb.net/ProyectoTBD2?retryWrites=true&w=majority");
+        MongoDatabase database = mongoClient.getDatabase("ProyectoTBD2");
+        try {
+            MongoCollection<org.bson.Document> collection=database.getCollection("Plazas");
+            collection.deleteOne(viejo);
         } catch (Exception e) {
             e.printStackTrace();
         }

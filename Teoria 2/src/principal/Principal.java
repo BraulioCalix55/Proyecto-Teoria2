@@ -171,6 +171,43 @@ public class Principal extends javax.swing.JFrame {
         plaza_años1 = new javax.swing.JTextField();
         plaza_prom1 = new javax.swing.JTextField();
         plaza_edad1 = new javax.swing.JTextField();
+        Mod_Personas = new javax.swing.JDialog();
+        btn_CrearPersonaFinal1 = new javax.swing.JButton();
+        leb_perso1 = new javax.swing.JLabel();
+        jLabel60 = new javax.swing.JLabel();
+        jLabel61 = new javax.swing.JLabel();
+        jLabel62 = new javax.swing.JLabel();
+        jLabel63 = new javax.swing.JLabel();
+        jLabel64 = new javax.swing.JLabel();
+        jLabel65 = new javax.swing.JLabel();
+        jLabel66 = new javax.swing.JLabel();
+        nombre_mod = new javax.swing.JTextField();
+        id_mod = new javax.swing.JTextField();
+        jLabel67 = new javax.swing.JLabel();
+        jLabel69 = new javax.swing.JLabel();
+        jLabel70 = new javax.swing.JLabel();
+        jLabel71 = new javax.swing.JLabel();
+        jLabel72 = new javax.swing.JLabel();
+        jLabel73 = new javax.swing.JLabel();
+        jLabel74 = new javax.swing.JLabel();
+        jLabel75 = new javax.swing.JLabel();
+        jLabel76 = new javax.swing.JLabel();
+        jLabel77 = new javax.swing.JLabel();
+        jLabel78 = new javax.swing.JLabel();
+        jLabel79 = new javax.swing.JLabel();
+        jLabel80 = new javax.swing.JLabel();
+        jLabel81 = new javax.swing.JLabel();
+        salario_mod = new javax.swing.JTextField();
+        antecedentes_mod = new javax.swing.JTextField();
+        enfermedad_mod = new javax.swing.JTextField();
+        titulo_mod = new javax.swing.JTextField();
+        estado_mod = new javax.swing.JTextField();
+        tipo_mod = new javax.swing.JTextField();
+        contrato_mod = new javax.swing.JTextField();
+        genero_mod = new javax.swing.JTextField();
+        edad_mod = new javax.swing.JTextField();
+        años_mod = new javax.swing.JTextField();
+        indice_mod = new javax.swing.JTextField();
         jPanel1 = new javax.swing.JPanel();
         Crear = new javax.swing.JButton();
         jLabel34 = new javax.swing.JLabel();
@@ -570,6 +607,11 @@ public class Principal extends javax.swing.JFrame {
         });
 
         btn_elimi_personas.setText("Eliminar");
+        btn_elimi_personas.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btn_elimi_personasMouseClicked(evt);
+            }
+        });
 
         btn_listar_personas.setText("Listar personas");
         btn_listar_personas.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -796,16 +838,17 @@ public class Principal extends javax.swing.JFrame {
             Modificar_PlazaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(Modificar_PlazaLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane4, javax.swing.GroupLayout.DEFAULT_SIZE, 818, Short.MAX_VALUE)
-                .addContainerGap())
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Modificar_PlazaLayout.createSequentialGroup()
-                .addGap(20, 20, 20)
-                .addComponent(btn_modi_plaza)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(btn_elimi_plaza)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(btn_listar_plazas)
-                .addGap(337, 337, 337))
+                .addGroup(Modificar_PlazaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(Modificar_PlazaLayout.createSequentialGroup()
+                        .addComponent(jScrollPane4, javax.swing.GroupLayout.DEFAULT_SIZE, 818, Short.MAX_VALUE)
+                        .addContainerGap())
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Modificar_PlazaLayout.createSequentialGroup()
+                        .addComponent(btn_modi_plaza)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(btn_elimi_plaza)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(btn_listar_plazas)
+                        .addGap(337, 337, 337))))
         );
         Modificar_PlazaLayout.setVerticalGroup(
             Modificar_PlazaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1090,6 +1133,109 @@ public class Principal extends javax.swing.JFrame {
         Mod_Plaza.getContentPane().add(plaza_prom1, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 160, 100, -1));
         Mod_Plaza.getContentPane().add(plaza_edad1, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 200, 100, -1));
 
+        Mod_Personas.setTitle("Crear personas");
+        Mod_Personas.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        btn_CrearPersonaFinal1.setText("Guardar Cambios");
+        btn_CrearPersonaFinal1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btn_CrearPersonaFinal1MouseClicked(evt);
+            }
+        });
+        Mod_Personas.getContentPane().add(btn_CrearPersonaFinal1, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 610, -1, -1));
+
+        leb_perso1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        leb_perso1.setText("MODIFICACION DE PERSONAS");
+        Mod_Personas.getContentPane().add(leb_perso1, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 10, -1, -1));
+
+        jLabel60.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel60.setText("Datos Personales");
+        Mod_Personas.getContentPane().add(jLabel60, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 50, -1, -1));
+
+        jLabel61.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel61.setText("Datos Familiares");
+        Mod_Personas.getContentPane().add(jLabel61, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 50, -1, -1));
+
+        jLabel62.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel62.setText("Datos sanitarios");
+        Mod_Personas.getContentPane().add(jLabel62, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 270, -1, -1));
+
+        jLabel63.setText("Nombre");
+        Mod_Personas.getContentPane().add(jLabel63, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 130, -1, -1));
+
+        jLabel64.setText("ID");
+        Mod_Personas.getContentPane().add(jLabel64, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 90, -1, -1));
+
+        jLabel65.setText("Edad");
+        Mod_Personas.getContentPane().add(jLabel65, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 170, -1, -1));
+
+        jLabel66.setText("Genero");
+        Mod_Personas.getContentPane().add(jLabel66, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 210, -1, -1));
+
+        nombre_mod.setEditable(false);
+        Mod_Personas.getContentPane().add(nombre_mod, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 130, 100, -1));
+
+        id_mod.setEditable(false);
+        Mod_Personas.getContentPane().add(id_mod, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 90, 100, -1));
+
+        jLabel67.setText("Estado Legal");
+        Mod_Personas.getContentPane().add(jLabel67, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 80, -1, -1));
+
+        jLabel69.setText("Enfermedad");
+        Mod_Personas.getContentPane().add(jLabel69, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 310, -1, -1));
+
+        jLabel70.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel70.setText("Datos legales");
+        Mod_Personas.getContentPane().add(jLabel70, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 280, -1, -1));
+
+        jLabel71.setText("Antecedentes");
+        Mod_Personas.getContentPane().add(jLabel71, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 310, -1, -1));
+
+        jLabel72.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel72.setText("Datos Academicos");
+        Mod_Personas.getContentPane().add(jLabel72, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 370, -1, -1));
+
+        jLabel73.setText("Titulo");
+        Mod_Personas.getContentPane().add(jLabel73, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 400, -1, -1));
+
+        jLabel74.setText("Indice Graduación");
+        Mod_Personas.getContentPane().add(jLabel74, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 440, -1, -1));
+
+        jLabel75.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel75.setText("Datos Laborales");
+        Mod_Personas.getContentPane().add(jLabel75, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 180, -1, -1));
+
+        jLabel76.setText("Años de experiencia");
+        Mod_Personas.getContentPane().add(jLabel76, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 220, -1, -1));
+
+        jLabel77.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel77.setText("Tipo de empleo");
+        Mod_Personas.getContentPane().add(jLabel77, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 380, -1, -1));
+
+        jLabel78.setText("Tipo de Empleo");
+        Mod_Personas.getContentPane().add(jLabel78, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 420, -1, -1));
+
+        jLabel79.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel79.setText("Preferencia de empleo");
+        Mod_Personas.getContentPane().add(jLabel79, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 500, -1, -1));
+
+        jLabel80.setText("Tipo contrato");
+        Mod_Personas.getContentPane().add(jLabel80, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 530, -1, -1));
+
+        jLabel81.setText("Salario");
+        Mod_Personas.getContentPane().add(jLabel81, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 570, -1, -1));
+        Mod_Personas.getContentPane().add(salario_mod, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 570, 90, -1));
+        Mod_Personas.getContentPane().add(antecedentes_mod, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 310, 120, -1));
+        Mod_Personas.getContentPane().add(enfermedad_mod, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 310, 120, -1));
+        Mod_Personas.getContentPane().add(titulo_mod, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 400, 120, -1));
+        Mod_Personas.getContentPane().add(estado_mod, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 80, 120, -1));
+        Mod_Personas.getContentPane().add(tipo_mod, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 420, 120, -1));
+        Mod_Personas.getContentPane().add(contrato_mod, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 530, 130, -1));
+        Mod_Personas.getContentPane().add(genero_mod, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 210, 100, -1));
+        Mod_Personas.getContentPane().add(edad_mod, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 170, 70, -1));
+        Mod_Personas.getContentPane().add(años_mod, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 220, 70, -1));
+        Mod_Personas.getContentPane().add(indice_mod, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 440, 110, -1));
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Ventana Principal");
 
@@ -1306,13 +1452,42 @@ public class Principal extends javax.swing.JFrame {
     }//GEN-LAST:event_btn_listar_personasMouseClicked
 
     private void btn_modi_personaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_modi_personaMouseClicked
-       if(tabla_personas.getSelectedRow()==-1){
+        if(tabla_personas.getSelectedRow()==-1){
            JOptionPane.showMessageDialog(this, "Debe seleccionar un elemento de la tabla para poder modificar");
        }
        else{
            DefaultTableModel modelo=(DefaultTableModel)tabla_personas.getModel();
-           String ObjectID=(String)modelo.getValueAt(tabla_personas.getSelectedRow(), 0);
-           System.out.println("Object ID "+ObjectID);
+           String nombre=(String)modelo.getValueAt(tabla_personas.getSelectedRow(), 1);
+           Persona pr=new Persona(nombre);
+           PersonaConexion pc=new PersonaConexion();
+           consulta=pc.obtenerPersona(pr);
+           ArrayList<String> empresita=new ArrayList();
+            String principal="";
+            String[] p;
+            principal=consulta.toString();
+            p=principal.split(",");
+            for (int i = 0; i <p.length; i++) {
+                String f[]=p[i].split("=");
+                    empresita.add(f[1]);
+            }
+            id_mod.setText(empresita.get(0));
+            nombre_mod.setText(empresita.get(1));
+            genero_mod.setText(empresita.get(2));
+            edad_mod.setText(empresita.get(3));
+            estado_mod.setText(empresita.get(4));
+            enfermedad_mod.setText(empresita.get(5));
+            antecedentes_mod.setText(empresita.get(6));
+            titulo_mod.setText(empresita.get(7));
+            indice_mod.setText(empresita.get(8));
+            años_mod.setText(empresita.get(9));
+            tipo_mod.setText(empresita.get(10));
+            contrato_mod.setText(empresita.get(11));
+            salario_mod.setText(empresita.get(12));
+
+            Mod_Personas.setModal(true);
+            Mod_Personas.pack();
+            Mod_Personas.setLocationRelativeTo(this);
+            Mod_Personas.setVisible(true);    
        }
         
         
@@ -1674,6 +1849,68 @@ public class Principal extends javax.swing.JFrame {
             }
         }
     }//GEN-LAST:event_btn_elimi_plazaMouseClicked
+
+    private void btn_CrearPersonaFinal1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_CrearPersonaFinal1MouseClicked
+        // TODO add your handling code here:
+        String id, nombre, genero, edad,estado,enfermedades,antecedentes,titulo,indice,años,tipoEmpleo,tipoContrato, sueldo;
+        id=id_mod.getText();
+        id_mod.setText("");
+        nombre=nombre_mod.getText();
+        nombre_mod.setText("");
+        genero=genero_mod.getText();
+        genero_mod.setText("");
+        edad=edad_mod.getText();
+        edad_mod.setText("");
+        estado=estado_mod.getText();
+        estado_mod.setText("");
+        enfermedades=enfermedad_mod.getText();
+        enfermedad_mod.setText("");
+        antecedentes=antecedentes_mod.getText();
+        antecedentes_mod.setText("");
+        titulo=titulo_mod.getText();
+        titulo_mod.setText("");
+        indice=indice_mod.getText();
+        indice_mod.setText("");
+        años=años_mod.getText();
+        años_mod.setText("");
+        tipoEmpleo=tipo_mod.getText();
+        tipo_mod.setText("");
+        tipoContrato=contrato_mod.getText();
+        contrato_mod.setText("");
+        sueldo=salario_mod.getText();
+        salario_mod.setText("");
+        Persona pr=new Persona(genero,nombre,edad,estado,enfermedades,antecedentes,titulo,indice,años,tipoEmpleo,tipoContrato,sueldo);
+        PersonaConexion pc=new PersonaConexion();
+        pc.reemplazarPersona(consulta, pr.toDocument());
+        pc.obtenerPersonas(tabla_personas);
+        JOptionPane.showMessageDialog(this, "Se modifico exitosamente");
+        Mod_Personas.dispose();
+    }//GEN-LAST:event_btn_CrearPersonaFinal1MouseClicked
+
+    private void btn_elimi_personasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_elimi_personasMouseClicked
+        // TODO add your handling code here:
+        if(tabla_personas.getSelectedRow()==-1){
+            JOptionPane.showMessageDialog(this, "Debe seleciconar un elemento de la tabla para poder borrarlo");
+        }
+        else{
+            int d=JOptionPane.showConfirmDialog(this, "¿Esta seguro que desea eliminar este elemento?");
+            if(d==0){
+                DefaultTableModel modelo=(DefaultTableModel)tabla_personas.getModel();
+                String nombre=(String)modelo.getValueAt(tabla_personas.getSelectedRow(), 1);
+                System.out.println("ID "+nombre);
+                Persona pr=new Persona(nombre);
+                PersonaConexion pc=new PersonaConexion();
+                consulta=new Document();
+                consulta=pc.obtenerPersona(pr);
+                pc.eliminarPersona(consulta);
+                pc.obtenerPersonas(tabla_personas);
+                JOptionPane.showMessageDialog(this, "Registro eliminado exitosamente");
+            }
+            else{
+                System.out.println("No");
+            }
+        }
+    }//GEN-LAST:event_btn_elimi_personasMouseClicked
     public static void main(String args[]) {
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
@@ -1711,6 +1948,7 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JLabel Lab_emple1;
     private javax.swing.JDialog Menu_Creacion;
     private javax.swing.JDialog Mod_Empresas;
+    private javax.swing.JDialog Mod_Personas;
     private javax.swing.JDialog Mod_Plaza;
     private javax.swing.JDialog Mod_Solicitud;
     private javax.swing.JButton Modificar1;
@@ -1735,8 +1973,11 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JButton Plaza_crear1;
     private javax.swing.JTextField Solicitud_persona;
     private javax.swing.JTable Tabla_solicitudes;
+    private javax.swing.JTextField antecedentes_mod;
+    private javax.swing.JTextField años_mod;
     private javax.swing.JButton btn_CreaPersona;
     private javax.swing.JButton btn_CrearPersonaFinal;
+    private javax.swing.JButton btn_CrearPersonaFinal1;
     private javax.swing.JButton btn_creaTrabajo;
     private javax.swing.JButton btn_crearEmpresa;
     private javax.swing.JButton btn_crearSoli;
@@ -1753,12 +1994,19 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JButton btn_modifi_empresa;
     private javax.swing.JTextField cif_empresa;
     private javax.swing.JTextField cif_empresa1;
+    private javax.swing.JTextField contrato_mod;
     private javax.swing.JTextField direccion_empresa;
     private javax.swing.JTextField direccion_empresa1;
     private javax.swing.JTextField director_empresa;
     private javax.swing.JTextField director_empresa1;
+    private javax.swing.JTextField edad_mod;
     private javax.swing.JTextField empresa_plaza;
     private javax.swing.JTextField empresa_plaza1;
+    private javax.swing.JTextField enfermedad_mod;
+    private javax.swing.JTextField estado_mod;
+    private javax.swing.JTextField genero_mod;
+    private javax.swing.JTextField id_mod;
+    private javax.swing.JTextField indice_mod;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
@@ -1817,8 +2065,29 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel58;
     private javax.swing.JLabel jLabel59;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel60;
+    private javax.swing.JLabel jLabel61;
+    private javax.swing.JLabel jLabel62;
+    private javax.swing.JLabel jLabel63;
+    private javax.swing.JLabel jLabel64;
+    private javax.swing.JLabel jLabel65;
+    private javax.swing.JLabel jLabel66;
+    private javax.swing.JLabel jLabel67;
+    private javax.swing.JLabel jLabel69;
     private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel70;
+    private javax.swing.JLabel jLabel71;
+    private javax.swing.JLabel jLabel72;
+    private javax.swing.JLabel jLabel73;
+    private javax.swing.JLabel jLabel74;
+    private javax.swing.JLabel jLabel75;
+    private javax.swing.JLabel jLabel76;
+    private javax.swing.JLabel jLabel77;
+    private javax.swing.JLabel jLabel78;
+    private javax.swing.JLabel jLabel79;
     private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel80;
+    private javax.swing.JLabel jLabel81;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
@@ -1828,8 +2097,10 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JLabel lab_empresa;
     private javax.swing.JLabel lab_empresa1;
     private javax.swing.JLabel leb_perso;
+    private javax.swing.JLabel leb_perso1;
     private javax.swing.JTextField nombre_empresa;
     private javax.swing.JTextField nombre_empresa1;
+    private javax.swing.JTextField nombre_mod;
     private javax.swing.JTextField persona_id;
     private javax.swing.JSpinner plaza_años;
     private javax.swing.JTextField plaza_años1;
@@ -1843,6 +2114,7 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JTextField plaza_sanita1;
     private javax.swing.JComboBox<String> plaza_titulo;
     private javax.swing.JComboBox<String> plaza_titulo1;
+    private javax.swing.JTextField salario_mod;
     private javax.swing.JTextField solicitud_cif;
     private javax.swing.JTextField solicitud_cif1;
     private javax.swing.JTextField solicitud_id;
@@ -1853,6 +2125,8 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JTable tabla_Plazas;
     private javax.swing.JTable tabla_empresas;
     private javax.swing.JTable tabla_personas;
+    private javax.swing.JTextField tipo_mod;
+    private javax.swing.JTextField titulo_mod;
     // End of variables declaration//GEN-END:variables
 boolean gestionar;
     boolean persona;

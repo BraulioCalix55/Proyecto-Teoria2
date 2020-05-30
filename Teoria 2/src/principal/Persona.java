@@ -19,9 +19,16 @@ import org.bson.Document;
  */
 public class Persona {
 private String id,genero,nombre,edad,legal,hijos,enfermedad,antecedentes,titulo,indice,años,empleo,contrato,sueldo;
-    public Persona() {
+    
+public Persona() {
     
     }
+
+    public Persona(String nombre) {
+        this.nombre = nombre;
+    }
+    
+    
 
     public Persona(String id, String genero, String nombre, String edad, String legal, String hijos, String enfermedad, String antecedentes, String titulo, String indice, String años, String empleo, String contrato, String sueldo) {
         this.id = id;
@@ -39,6 +46,23 @@ private String id,genero,nombre,edad,legal,hijos,enfermedad,antecedentes,titulo,
         this.contrato = contrato;
         this.sueldo = sueldo;
     }
+
+    public Persona(String genero, String nombre, String edad, String legal, String enfermedad, String antecedentes, String titulo, String indice, String años, String empleo, String contrato, String sueldo) {
+        this.genero = genero;
+        this.nombre = nombre;
+        this.edad = edad;
+        this.legal = legal;
+        this.enfermedad = enfermedad;
+        this.antecedentes = antecedentes;
+        this.titulo = titulo;
+        this.indice = indice;
+        this.años = años;
+        this.empleo = empleo;
+        this.contrato = contrato;
+        this.sueldo = sueldo;
+    }
+    
+    
 
     public String getId() {
         return id;
@@ -169,6 +193,10 @@ private String id,genero,nombre,edad,legal,hijos,enfermedad,antecedentes,titulo,
         .append("Sueldo", this.sueldo);
         return d;
     }
-    
+    public Document toDocumentName(){
+        Document d=new Document();
+        d.append("Nombre", this.nombre);
+        return d;
+    }
     
 }

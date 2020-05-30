@@ -51,6 +51,7 @@ public class EmpresaConexion {
     public void obtenerEmpresas(JTable tabla){
         DefaultTableModel modelo= (DefaultTableModel)tabla.getModel();
         modelo.setNumRows(0);
+        modelo.setNumRows(0);
         ArrayList<String> persona=new ArrayList();
         MongoClient mongoClient = MongoClients.create(
         "mongodb+srv://admin:Cuaderno2020@database-1-ubdcf.mongodb.net/ProyectoTBD2?retryWrites=true&w=majority");

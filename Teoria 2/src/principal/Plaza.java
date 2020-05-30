@@ -5,17 +5,20 @@
  */
 package principal;
 
+import org.bson.Document;
+
 /**
  *
  * @author User
  */
 public class Plaza {
-    private String promedio,sanitario,edad,genero,titulo,años;
+    private String empresa, promedio,sanitario,edad,genero,titulo,años;
 
     public Plaza() {
     }
 
-    public Plaza(String promedio, String sanitario, String edad, String genero, String titulo, String años) {
+    public Plaza(String empresa,String promedio, String sanitario, String edad, String genero, String titulo, String años) {
+        this.empresa=empresa;
         this.promedio = promedio;
         this.sanitario = sanitario;
         this.edad = edad;
@@ -70,6 +73,28 @@ public class Plaza {
 
     public void setAños(String años) {
         this.años = años;
+    }
+
+    public String getEmpresa() {
+        return empresa;
+    }
+
+    public void setEmpresa(String empresa) {
+        this.empresa = empresa;
+    }
+    
+    
+    
+    public Document toDocument(){
+        Document d=new Document();
+        d.append("Empresa ", this.empresa)
+        .append("Requisito de promedio ", this.promedio)
+        .append("Requisito sanitario ", this.sanitario)
+        .append("Requisito de edad ", this.edad)
+        .append("Requisito de genero ", this.genero)
+        .append("Requisito de titulo ", this.titulo)
+        .append("Requisito de años de experiencia ", this.años);
+        return d;
     }
     
 }

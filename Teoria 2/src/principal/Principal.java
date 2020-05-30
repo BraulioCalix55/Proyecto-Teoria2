@@ -3,6 +3,7 @@ package principal;
 import conexiones.SolicitudConexion;
 import conexiones.PersonaConexion;
 import conexiones.EmpresaConexion;
+import conexiones.PlazaConexion;
 import java.awt.SystemColor;
 import javax.swing.JOptionPane;
 
@@ -76,7 +77,7 @@ public class Principal extends javax.swing.JFrame {
         jLabel28 = new javax.swing.JLabel();
         Personas_salario = new javax.swing.JTextField();
         Persona_enfermedad = new javax.swing.JComboBox<>();
-        Crear_solicitud = new javax.swing.JDialog();
+        Crear_Solicitud = new javax.swing.JDialog();
         solicitud_id = new javax.swing.JTextField();
         jLabel29 = new javax.swing.JLabel();
         jLabel30 = new javax.swing.JLabel();
@@ -92,19 +93,19 @@ public class Principal extends javax.swing.JFrame {
         tabla_personas = new javax.swing.JTable();
         btn_modi_persona = new javax.swing.JButton();
         btn_elimi_personas = new javax.swing.JButton();
-        btn_realizaSolicitud = new javax.swing.JButton();
         btn_listar_personas = new javax.swing.JButton();
         Modificar_Empresas = new javax.swing.JDialog();
         jScrollPane2 = new javax.swing.JScrollPane();
-        Tabla_empresas = new javax.swing.JTable();
+        tabla_empresas = new javax.swing.JTable();
         btn_modifi_empresa = new javax.swing.JButton();
         btn_elimi_empresa = new javax.swing.JButton();
-        btn_crearPuesto = new javax.swing.JButton();
-        Modificar_solicitudess = new javax.swing.JDialog();
+        jButton1 = new javax.swing.JButton();
+        Modificar_Solicitudes = new javax.swing.JDialog();
         jScrollPane3 = new javax.swing.JScrollPane();
         Tabla_solicitudes = new javax.swing.JTable();
         btn_mod_soli = new javax.swing.JButton();
         btn_elim_solicitud = new javax.swing.JButton();
+        jButton2 = new javax.swing.JButton();
         Modificar_Plaza = new javax.swing.JDialog();
         jScrollPane4 = new javax.swing.JScrollPane();
         tabla_Plazas = new javax.swing.JTable();
@@ -125,10 +126,15 @@ public class Principal extends javax.swing.JFrame {
         Plaza_crear = new javax.swing.JButton();
         jLabel41 = new javax.swing.JLabel();
         plaza_titulo = new javax.swing.JComboBox<>();
+        jLabel42 = new javax.swing.JLabel();
+        jLabel43 = new javax.swing.JLabel();
+        empresa_plaza = new javax.swing.JTextField();
         jPanel1 = new javax.swing.JPanel();
         Crear = new javax.swing.JButton();
         jLabel34 = new javax.swing.JLabel();
         Modificar1 = new javax.swing.JButton();
+
+        Crear_Empresas.setTitle("Crear empresa");
 
         lab_empresa.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         lab_empresa.setText("Creación Empresa");
@@ -206,6 +212,7 @@ public class Principal extends javax.swing.JFrame {
                 .addContainerGap(34, Short.MAX_VALUE))
         );
 
+        Menu_Creacion.setTitle("Menu de creación");
         Menu_Creacion.setMinimumSize(new java.awt.Dimension(300, 300));
         Menu_Creacion.setModal(true);
 
@@ -296,6 +303,7 @@ public class Principal extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
+        Crear_Personas.setTitle("Crear personas");
         Crear_Personas.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         btn_CrearPersonaFinal.setText("Crear");
@@ -414,6 +422,8 @@ public class Principal extends javax.swing.JFrame {
         Persona_enfermedad.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Hipertensión", "Diabetes", "Discapacidad", "Otra" }));
         Crear_Personas.getContentPane().add(Persona_enfermedad, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 310, 130, -1));
 
+        Crear_Solicitud.setTitle("Crear Solicitud");
+
         jLabel29.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel29.setText("ID");
 
@@ -436,53 +446,53 @@ public class Principal extends javax.swing.JFrame {
         Lab_emple.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         Lab_emple.setText("Crear solicitud de empleo");
 
-        javax.swing.GroupLayout Crear_solicitudLayout = new javax.swing.GroupLayout(Crear_solicitud.getContentPane());
-        Crear_solicitud.getContentPane().setLayout(Crear_solicitudLayout);
-        Crear_solicitudLayout.setHorizontalGroup(
-            Crear_solicitudLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(Crear_solicitudLayout.createSequentialGroup()
+        javax.swing.GroupLayout Crear_SolicitudLayout = new javax.swing.GroupLayout(Crear_Solicitud.getContentPane());
+        Crear_Solicitud.getContentPane().setLayout(Crear_SolicitudLayout);
+        Crear_SolicitudLayout.setHorizontalGroup(
+            Crear_SolicitudLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(Crear_SolicitudLayout.createSequentialGroup()
                 .addGap(49, 49, 49)
-                .addGroup(Crear_solicitudLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(Crear_solicitudLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                .addGroup(Crear_SolicitudLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(Crear_SolicitudLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                         .addComponent(jLabel31)
                         .addComponent(jLabel32, javax.swing.GroupLayout.Alignment.LEADING))
                     .addComponent(jLabel30)
                     .addComponent(jLabel29))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(Crear_solicitudLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                .addGroup(Crear_SolicitudLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(solicitud_cif)
                     .addComponent(solicitud_id)
                     .addComponent(solicitud_puesto, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 90, Short.MAX_VALUE)
                     .addComponent(Solicitud_persona, javax.swing.GroupLayout.DEFAULT_SIZE, 90, Short.MAX_VALUE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Crear_solicitudLayout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Crear_SolicitudLayout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
                 .addComponent(btn_crearSoli)
                 .addGap(111, 111, 111))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Crear_solicitudLayout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Crear_SolicitudLayout.createSequentialGroup()
                 .addContainerGap(72, Short.MAX_VALUE)
                 .addComponent(Lab_emple)
                 .addContainerGap(48, Short.MAX_VALUE))
         );
-        Crear_solicitudLayout.setVerticalGroup(
-            Crear_solicitudLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(Crear_solicitudLayout.createSequentialGroup()
+        Crear_SolicitudLayout.setVerticalGroup(
+            Crear_SolicitudLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(Crear_SolicitudLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(Lab_emple)
                 .addGap(32, 32, 32)
-                .addGroup(Crear_solicitudLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(Crear_SolicitudLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(solicitud_id, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel29))
                 .addGap(47, 47, 47)
-                .addGroup(Crear_solicitudLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(Crear_SolicitudLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel30)
                     .addComponent(solicitud_cif, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(55, 55, 55)
-                .addGroup(Crear_solicitudLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(Crear_SolicitudLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel31)
                     .addComponent(Solicitud_persona, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(48, 48, 48)
-                .addGroup(Crear_solicitudLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(Crear_SolicitudLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel32)
                     .addComponent(solicitud_puesto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 51, Short.MAX_VALUE)
@@ -497,11 +507,11 @@ public class Principal extends javax.swing.JFrame {
 
             },
             new String [] {
-                "ID Object", "Nombre", "Genero", "Edad", "Estado Civil", "Hijos", "Enfermedad", "Antecedentes", "Titulo", "Indice", "Años Exp"
+                "ID Object", "Nombre", "Genero", "Edad", "Estado Civil", "Enfermedades", "Antecedentes", "Titulo", "Indice", "Años Exp", "Tipo Empleo", "Tipo Contrato", "Sueldo"
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false, false, false, false, false, false, false, false, false, false, false
+                false, false, false, false, false, false, false, false, false, false, false, false, false
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
@@ -518,8 +528,6 @@ public class Principal extends javax.swing.JFrame {
         });
 
         btn_elimi_personas.setText("Eliminar");
-
-        btn_realizaSolicitud.setText("Realizar solicitud (?)");
 
         btn_listar_personas.setText("Listar personas");
         btn_listar_personas.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -544,9 +552,7 @@ public class Principal extends javax.swing.JFrame {
                         .addComponent(btn_elimi_personas)
                         .addGap(176, 176, 176)
                         .addComponent(btn_listar_personas)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 224, Short.MAX_VALUE)
-                        .addComponent(btn_realizaSolicitud)
-                        .addGap(18, 18, 18))))
+                        .addGap(18, 456, Short.MAX_VALUE))))
         );
         Modificar_PersonasLayout.setVerticalGroup(
             Modificar_PersonasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -557,33 +563,29 @@ public class Principal extends javax.swing.JFrame {
                 .addGroup(Modificar_PersonasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btn_modi_persona)
                     .addComponent(btn_elimi_personas)
-                    .addComponent(btn_realizaSolicitud)
                     .addComponent(btn_listar_personas))
                 .addContainerGap())
         );
 
         Modificar_Empresas.setTitle("Modificar Empresas");
 
-        Tabla_empresas.setModel(new javax.swing.table.DefaultTableModel(
+        tabla_empresas.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+
             },
             new String [] {
-                "Nombre", "CIF", "Director", "Direccion"
+                "ID Object", "Nombre", "CIF", "Director", "Direccion"
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false, false, false, false
+                false, false, false, false, false
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
                 return canEdit [columnIndex];
             }
         });
-        jScrollPane2.setViewportView(Tabla_empresas);
+        jScrollPane2.setViewportView(tabla_empresas);
 
         btn_modifi_empresa.setText("Modificar");
         btn_modifi_empresa.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -594,7 +596,12 @@ public class Principal extends javax.swing.JFrame {
 
         btn_elimi_empresa.setText("Eliminar");
 
-        btn_crearPuesto.setText("Crear puesto (?)");
+        jButton1.setText("Listar Empresas");
+        jButton1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton1MouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout Modificar_EmpresasLayout = new javax.swing.GroupLayout(Modificar_Empresas.getContentPane());
         Modificar_Empresas.getContentPane().setLayout(Modificar_EmpresasLayout);
@@ -608,8 +615,9 @@ public class Principal extends javax.swing.JFrame {
                         .addComponent(btn_modifi_empresa)
                         .addGap(18, 18, 18)
                         .addComponent(btn_elimi_empresa)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(btn_crearPuesto)))
+                        .addGap(164, 164, 164)
+                        .addComponent(jButton1)
+                        .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         Modificar_EmpresasLayout.setVerticalGroup(
@@ -620,25 +628,22 @@ public class Principal extends javax.swing.JFrame {
                 .addGroup(Modificar_EmpresasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btn_modifi_empresa)
                     .addComponent(btn_elimi_empresa)
-                    .addComponent(btn_crearPuesto))
+                    .addComponent(jButton1))
                 .addContainerGap())
         );
 
-        Modificar_solicitudess.setTitle("Modificar Empresas");
+        Modificar_Solicitudes.setTitle("Modificar Empresas");
 
         Tabla_solicitudes.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+
             },
             new String [] {
-                "ID", "CIF", "Nombre Empleado", "Puesto"
+                "ID Object", "ID", "CIF", "Nombre Empleado", "Puesto"
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false, false, false, false
+                false, false, false, false, false
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
@@ -656,42 +661,54 @@ public class Principal extends javax.swing.JFrame {
 
         btn_elim_solicitud.setText("Eliminar");
 
-        javax.swing.GroupLayout Modificar_solicitudessLayout = new javax.swing.GroupLayout(Modificar_solicitudess.getContentPane());
-        Modificar_solicitudess.getContentPane().setLayout(Modificar_solicitudessLayout);
-        Modificar_solicitudessLayout.setHorizontalGroup(
-            Modificar_solicitudessLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(Modificar_solicitudessLayout.createSequentialGroup()
+        jButton2.setText("Listar Solicitudes");
+        jButton2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton2MouseClicked(evt);
+            }
+        });
+
+        javax.swing.GroupLayout Modificar_SolicitudesLayout = new javax.swing.GroupLayout(Modificar_Solicitudes.getContentPane());
+        Modificar_Solicitudes.getContentPane().setLayout(Modificar_SolicitudesLayout);
+        Modificar_SolicitudesLayout.setHorizontalGroup(
+            Modificar_SolicitudesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(Modificar_SolicitudesLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(Modificar_solicitudessLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(Modificar_SolicitudesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 710, Short.MAX_VALUE)
-                    .addGroup(Modificar_solicitudessLayout.createSequentialGroup()
+                    .addGroup(Modificar_SolicitudesLayout.createSequentialGroup()
                         .addComponent(btn_mod_soli)
                         .addGap(18, 18, 18)
                         .addComponent(btn_elim_solicitud)
+                        .addGap(146, 146, 146)
+                        .addComponent(jButton2)
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
-        Modificar_solicitudessLayout.setVerticalGroup(
-            Modificar_solicitudessLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(Modificar_solicitudessLayout.createSequentialGroup()
+        Modificar_SolicitudesLayout.setVerticalGroup(
+            Modificar_SolicitudesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(Modificar_SolicitudesLayout.createSequentialGroup()
                 .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 95, Short.MAX_VALUE)
-                .addGroup(Modificar_solicitudessLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(Modificar_SolicitudesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btn_mod_soli)
-                    .addComponent(btn_elim_solicitud))
+                    .addComponent(btn_elim_solicitud)
+                    .addComponent(jButton2))
                 .addContainerGap())
         );
+
+        Modificar_Plaza.setTitle("Modificar Plaza");
 
         tabla_Plazas.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
             new String [] {
-                "Empresa", "Requisito academico (%)", "Requisito Sanitario", "Requisito de edad", "requisito de genero", "requisito de titulo", "Requisito Años de experiencia"
+                "ID Object", "Empresa", "Requisito academico (%)", "Requisito Sanitario", "Requisito de edad", "Requisito de genero", "Requisito de titulo", "Requisito Años de experiencia"
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                true, false, false, false, false, true, true
+                false, false, false, false, false, false, false, false
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
@@ -722,71 +739,83 @@ public class Principal extends javax.swing.JFrame {
             Modificar_PlazaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(Modificar_PlazaLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane4)
+                .addComponent(jScrollPane4, javax.swing.GroupLayout.DEFAULT_SIZE, 818, Short.MAX_VALUE)
                 .addContainerGap())
-            .addGroup(Modificar_PlazaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(Modificar_PlazaLayout.createSequentialGroup()
-                    .addContainerGap()
-                    .addComponent(btn_modi_plaza)
-                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                    .addComponent(btn_elimi_plaza)
-                    .addGap(176, 176, 176)
-                    .addComponent(btn_listar_plazas)
-                    .addContainerGap(407, Short.MAX_VALUE)))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Modificar_PlazaLayout.createSequentialGroup()
+                .addGap(20, 20, 20)
+                .addComponent(btn_modi_plaza)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(btn_elimi_plaza)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(btn_listar_plazas)
+                .addGap(337, 337, 337))
         );
         Modificar_PlazaLayout.setVerticalGroup(
             Modificar_PlazaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(Modificar_PlazaLayout.createSequentialGroup()
                 .addGap(26, 26, 26)
                 .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(114, Short.MAX_VALUE))
-            .addGroup(Modificar_PlazaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(Modificar_PlazaLayout.createSequentialGroup()
-                    .addContainerGap(217, Short.MAX_VALUE)
-                    .addGroup(Modificar_PlazaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(btn_modi_plaza)
-                        .addComponent(btn_elimi_plaza)
-                        .addComponent(btn_listar_plazas))
-                    .addGap(78, 78, 78)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 80, Short.MAX_VALUE)
+                .addGroup(Modificar_PlazaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btn_listar_plazas)
+                    .addComponent(btn_elimi_plaza)
+                    .addComponent(btn_modi_plaza))
+                .addContainerGap())
         );
 
+        Crear_Plaza.setTitle("Crear Plaza");
         Crear_Plaza.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-        Crear_Plaza.getContentPane().add(plaza_sanita, new org.netbeans.lib.awtextra.AbsoluteConstraints(214, 230, 80, -1));
-        Crear_Plaza.getContentPane().add(plaza_años, new org.netbeans.lib.awtextra.AbsoluteConstraints(214, 45, -1, -1));
-        Crear_Plaza.getContentPane().add(plaza_edad, new org.netbeans.lib.awtextra.AbsoluteConstraints(214, 162, -1, -1));
-        Crear_Plaza.getContentPane().add(plaza_prom, new org.netbeans.lib.awtextra.AbsoluteConstraints(214, 99, -1, -1));
+        Crear_Plaza.getContentPane().add(plaza_sanita, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 240, 100, -1));
+        Crear_Plaza.getContentPane().add(plaza_años, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 120, 40, -1));
+        Crear_Plaza.getContentPane().add(plaza_edad, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 200, 40, -1));
+        Crear_Plaza.getContentPane().add(plaza_prom, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 160, 40, -1));
 
-        jLabel1.setText("Años experiencia");
-        Crear_Plaza.getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(33, 47, -1, -1));
+        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        jLabel1.setText("Empresa Solicitante: ");
+        Crear_Plaza.getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 80, -1, -1));
 
-        jLabel6.setText("Promedio");
-        Crear_Plaza.getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(33, 102, -1, -1));
+        jLabel6.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        jLabel6.setText("Promedio:");
+        Crear_Plaza.getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 160, -1, -1));
 
-        jLabel33.setText("edad");
-        Crear_Plaza.getContentPane().add(jLabel33, new org.netbeans.lib.awtextra.AbsoluteConstraints(33, 165, -1, -1));
+        jLabel33.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        jLabel33.setText("Edad:");
+        Crear_Plaza.getContentPane().add(jLabel33, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 200, -1, -1));
 
-        jLabel39.setText("requisito sanitario");
-        Crear_Plaza.getContentPane().add(jLabel39, new org.netbeans.lib.awtextra.AbsoluteConstraints(33, 233, -1, -1));
+        jLabel39.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        jLabel39.setText("Requisito Sanitario:");
+        Crear_Plaza.getContentPane().add(jLabel39, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 240, -1, -1));
 
         plaza_gen.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "M", "F" }));
-        Crear_Plaza.getContentPane().add(plaza_gen, new org.netbeans.lib.awtextra.AbsoluteConstraints(214, 302, -1, -1));
+        Crear_Plaza.getContentPane().add(plaza_gen, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 280, -1, -1));
 
-        jLabel40.setText("Genero");
-        Crear_Plaza.getContentPane().add(jLabel40, new org.netbeans.lib.awtextra.AbsoluteConstraints(33, 305, -1, -1));
+        jLabel40.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        jLabel40.setText("Genero: ");
+        Crear_Plaza.getContentPane().add(jLabel40, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 280, -1, -1));
 
-        Plaza_crear.setText("crear");
+        Plaza_crear.setText("Crear");
         Plaza_crear.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 Plaza_crearMouseClicked(evt);
             }
         });
-        Crear_Plaza.getContentPane().add(Plaza_crear, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 420, -1, -1));
+        Crear_Plaza.getContentPane().add(Plaza_crear, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 380, -1, -1));
 
-        jLabel41.setText("titulo");
-        Crear_Plaza.getContentPane().add(jLabel41, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 370, -1, -1));
+        jLabel41.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        jLabel41.setText("Requisito Titulo:");
+        Crear_Plaza.getContentPane().add(jLabel41, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 320, -1, -1));
 
         plaza_titulo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Licenciatura", "Ingenieria", "Doctorado" }));
-        Crear_Plaza.getContentPane().add(plaza_titulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 370, 80, -1));
+        Crear_Plaza.getContentPane().add(plaza_titulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 320, 100, -1));
+
+        jLabel42.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel42.setText("Crear plaza de trabajo");
+        Crear_Plaza.getContentPane().add(jLabel42, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 10, -1, -1));
+
+        jLabel43.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        jLabel43.setText("Años experiencia:");
+        Crear_Plaza.getContentPane().add(jLabel43, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 120, -1, -1));
+        Crear_Plaza.getContentPane().add(empresa_plaza, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 80, 100, -1));
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Ventana Principal");
@@ -911,13 +940,12 @@ public class Principal extends javax.swing.JFrame {
             
             JOptionPane.showMessageDialog(this, "Solicitud creada exitosamente");
         }
-        Crear_solicitud.dispose();
+        Crear_Solicitud.dispose();
 
     }//GEN-LAST:event_btn_crearSoliMouseClicked
 
     private void btn_crearEmpresaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_crearEmpresaMouseClicked
         seteo();
-        
         empresa = true;
         if (gestionar == true && empresa == true) {
             lab_empresa.setText("MODIFICAR EMPRESA");
@@ -977,19 +1005,19 @@ public class Principal extends javax.swing.JFrame {
         if (gestionar == true && solicitud == true) {
             Lab_emple.setText("Modificar Empleo");
             btn_crearSoli.setText("Modificar");
-            Modificar_solicitudess.setModal(true);
-            Modificar_solicitudess.pack();
-            Modificar_solicitudess.setLocationRelativeTo(this);
-            Modificar_solicitudess.setVisible(true);
+            Modificar_Solicitudes.setModal(true);
+            Modificar_Solicitudes.pack();
+            Modificar_Solicitudes.setLocationRelativeTo(this);
+            Modificar_Solicitudes.setVisible(true);
             Menu_Creacion.dispose();
             solicitud = false;
             gestionar = false;
         } else {
             btn_crearSoli.setText("Crear");
-            Crear_solicitud.setModal(true);
-            Crear_solicitud.pack();
-            Crear_solicitud.setLocationRelativeTo(this);
-            Crear_solicitud.setVisible(true);
+            Crear_Solicitud.setModal(true);
+            Crear_Solicitud.pack();
+            Crear_Solicitud.setLocationRelativeTo(this);
+            Crear_Solicitud.setVisible(true);
             Menu_Creacion.dispose();
             solicitud = false;
             gestionar = false;
@@ -1052,10 +1080,10 @@ public class Principal extends javax.swing.JFrame {
         solicitud_id.setText(string);
         solicitud_puesto.setText(string);
         solicitud_cif.setText();*/
-        Crear_solicitud.pack();
-        Crear_solicitud.setModal(true);
-        Crear_solicitud.setLocationRelativeTo(this);
-        Crear_solicitud.setVisible(true);
+        Crear_Solicitud.pack();
+        Crear_Solicitud.setModal(true);
+        Crear_Solicitud.setLocationRelativeTo(this);
+        Crear_Solicitud.setVisible(true);
 
     }//GEN-LAST:event_btn_mod_soliMouseClicked
 
@@ -1065,23 +1093,39 @@ public class Principal extends javax.swing.JFrame {
 
     private void btn_listar_plazasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_listar_plazasMouseClicked
         // TODO add your handling code here:
+        PlazaConexion pc=new PlazaConexion();
+        pc.obtenerPlazas(tabla_Plazas);
+        JOptionPane.showMessageDialog(this, "Plazas listadas exitosamente"); 
     }//GEN-LAST:event_btn_listar_plazasMouseClicked
 
     private void Plaza_crearMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Plaza_crearMouseClicked
         // TODO add your handling code here:
-        String promedio,sanitario,edad,genero,titulo,años;
+        String empresa1,promedio,sanitario,edad,genero,titulo,años;
+        empresa1=empresa_plaza.getText();
+        empresa_plaza.setText("");
         promedio=plaza_prom.getValue().toString();
         sanitario=plaza_sanita.getText();
         edad=plaza_edad.getValue().toString();
         genero=plaza_gen.getSelectedItem().toString();
         años=plaza_años.getValue().toString();
         titulo=plaza_titulo.getSelectedItem().toString();
-
+        Plaza p=new Plaza(empresa1, promedio, sanitario, edad, genero ,titulo, años);
+        PlazaConexion pc=new PlazaConexion(p);
+        pc.crearPlaza();
+        JOptionPane.showMessageDialog(this, "Plaza creada exitosamente");
+        Crear_Plaza.dispose();
     }//GEN-LAST:event_Plaza_crearMouseClicked
 
     private void btn_creaTrabajoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_creaTrabajoMouseClicked
-        if (gestionar==true) {
-            
+        plaza=true;
+        if (gestionar==true && plaza==true) {
+            Modificar_Plaza.setModal(true);
+            Modificar_Plaza.pack();
+            Modificar_Plaza.setLocationRelativeTo(this);
+            Modificar_Plaza.setVisible(true);
+            gestionar=false;
+            plaza=false;
+            Menu_Creacion.dispose();
         }else{
         //crear
         Crear_Plaza.pack();
@@ -1090,6 +1134,20 @@ public class Principal extends javax.swing.JFrame {
         Crear_Plaza.setVisible(true);
         }
     }//GEN-LAST:event_btn_creaTrabajoMouseClicked
+
+    private void jButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseClicked
+        // TODO add your handling code here:
+        EmpresaConexion emp =new EmpresaConexion();
+        emp.obtenerEmpresas(tabla_empresas);
+        JOptionPane.showMessageDialog(this, "Listado Exitosamente");
+    }//GEN-LAST:event_jButton1MouseClicked
+
+    private void jButton2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton2MouseClicked
+        // TODO add your handling code here:
+        SolicitudConexion sc=new SolicitudConexion();
+        sc.obtenerPersonas(Tabla_solicitudes);
+        JOptionPane.showMessageDialog(this, "Listado exitosamente");
+    }//GEN-LAST:event_jButton2MouseClicked
     public static void main(String args[]) {
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
@@ -1121,14 +1179,14 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JDialog Crear_Empresas;
     private javax.swing.JDialog Crear_Personas;
     private javax.swing.JDialog Crear_Plaza;
-    private javax.swing.JDialog Crear_solicitud;
+    private javax.swing.JDialog Crear_Solicitud;
     private javax.swing.JLabel Lab_emple;
     private javax.swing.JDialog Menu_Creacion;
     private javax.swing.JButton Modificar1;
     private javax.swing.JDialog Modificar_Empresas;
     private javax.swing.JDialog Modificar_Personas;
     private javax.swing.JDialog Modificar_Plaza;
-    private javax.swing.JDialog Modificar_solicitudess;
+    private javax.swing.JDialog Modificar_Solicitudes;
     private javax.swing.JComboBox<String> Persona_antecedentes;
     private javax.swing.JComboBox<String> Persona_contrato;
     private javax.swing.JSpinner Persona_edad;
@@ -1144,13 +1202,11 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JTextField Personas_salario;
     private javax.swing.JButton Plaza_crear;
     private javax.swing.JTextField Solicitud_persona;
-    private javax.swing.JTable Tabla_empresas;
     private javax.swing.JTable Tabla_solicitudes;
     private javax.swing.JButton btn_CreaPersona;
     private javax.swing.JButton btn_CrearPersonaFinal;
     private javax.swing.JButton btn_creaTrabajo;
     private javax.swing.JButton btn_crearEmpresa;
-    private javax.swing.JButton btn_crearPuesto;
     private javax.swing.JButton btn_crearSoli;
     private javax.swing.JButton btn_elim_solicitud;
     private javax.swing.JButton btn_elimi_empresa;
@@ -1162,10 +1218,12 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JButton btn_modi_persona;
     private javax.swing.JButton btn_modi_plaza;
     private javax.swing.JButton btn_modifi_empresa;
-    private javax.swing.JButton btn_realizaSolicitud;
     private javax.swing.JTextField cif_empresa;
     private javax.swing.JTextField direccion_empresa;
     private javax.swing.JTextField director_empresa;
+    private javax.swing.JTextField empresa_plaza;
+    private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -1202,6 +1260,8 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel40;
     private javax.swing.JLabel jLabel41;
+    private javax.swing.JLabel jLabel42;
+    private javax.swing.JLabel jLabel43;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
@@ -1226,12 +1286,14 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JTextField solicitud_id;
     private javax.swing.JTextField solicitud_puesto;
     private javax.swing.JTable tabla_Plazas;
+    private javax.swing.JTable tabla_empresas;
     private javax.swing.JTable tabla_personas;
     // End of variables declaration//GEN-END:variables
 boolean gestionar;
     boolean persona;
     boolean empresa;
     boolean solicitud;
+    boolean plaza;
     
     Persona p;
     

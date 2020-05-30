@@ -13,44 +13,42 @@ import com.mongodb.client.MongoDatabase;
 import java.util.ArrayList;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
-import principal.Persona;
+import principal.Plaza;
 
 /**
  *
  * @author David
  */
-public class PersonaConexion {
-    Persona persona;
-    public PersonaConexion(Persona persona) {
-        this.persona=persona;
+public class PlazaConexion {
+    Plaza plaza;
+
+    public PlazaConexion() {
     }
 
-    public PersonaConexion() {
-       
+    public PlazaConexion(Plaza plaza) {
+        this.plaza = plaza;
     }
     
-    
-    public void crearPersona(){
+    public void crearPlaza(){
         MongoClient mongoClient = MongoClients.create(
         "mongodb+srv://admin:Cuaderno2020@database-1-ubdcf.mongodb.net/ProyectoTBD2?retryWrites=true&w=majority");
         MongoDatabase database = mongoClient.getDatabase("ProyectoTBD2");
         try {
-            MongoCollection<org.bson.Document> collection=database.getCollection("Personas");
-            collection.insertOne(persona.toDocument());
+            MongoCollection<org.bson.Document> collection=database.getCollection("Plazas");
+            collection.insertOne(plaza.toDocument());
         } catch (Exception e) {
             e.printStackTrace();
         }
     }
     
-    
-    public void obtenerPersonas(JTable tabla){
+    public void obtenerPlazas(JTable tabla){
         DefaultTableModel modelo= (DefaultTableModel)tabla.getModel();
         ArrayList<String> persona=new ArrayList();
         MongoClient mongoClient = MongoClients.create(
         "mongodb+srv://admin:Cuaderno2020@database-1-ubdcf.mongodb.net/ProyectoTBD2?retryWrites=true&w=majority");
         MongoDatabase database = mongoClient.getDatabase("ProyectoTBD2");
         try {
-            MongoCollection<org.bson.Document> collection=database.getCollection("Personas");
+            MongoCollection<org.bson.Document> collection=database.getCollection("Plazas");
             MongoCursor<org.bson.Document> cursor=collection.find().iterator();
             while(cursor.hasNext()){
                 String principal="";
